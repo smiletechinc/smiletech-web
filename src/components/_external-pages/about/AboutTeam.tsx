@@ -7,21 +7,38 @@ import facebookFill from '@iconify/icons-eva/facebook-fill';
 import roundArrowRightAlt from '@iconify/icons-ic/round-arrow-right-alt';
 import instagramFilled from '@iconify/icons-ant-design/instagram-filled';
 // material
-import { useTheme } from '@mui/material/styles';
+//import { useTheme } from '@mui/material/styles';
 import { Box, Card, Button, Container, Typography, IconButton } from '@mui/material';
 // utils
 import mockData from '../../../utils/mock-data';
 //
 import { varFadeIn, varFadeInUp, MotionInView, varFadeInDown } from '../../animate';
 import { CarouselControlsArrowsBasic2 } from '../../carousel';
+import { socialInstagram, socialLinkedin } from 'utils/mock-data/socialLink';
 
 // ----------------------------------------------------------------------
 
-const MOCK_MEMBERS = [...Array(5)].map((_, index) => ({
+//  const Social = [  
+//   { link:'https://www.facebook.com/hfshan247'},
+//   {link:'https://twitter.com/hfshan247'}
+//   { name:'instagram', icon:'instagramFilled', link:'https://www.instagram.com/hfshan247/' },
+//   { name:'twitter', icon:'twitterFill', link:'https://twitter.com/hfshan247' },
+//   { name:'linkedin', icon:'linkedinFill', link:'https://www.linkedin.com/in/hfshan247/ '}
+ //]
+
+// ----------------------------------------------------------------------
+
+const MOCK_MEMBERS = [...Array(3)].map((_, index) => ({
   id: mockData.id(index),
   name: mockData.name.fullName(index),
   role: mockData.role(index),
-  avatar: mockData.image.avatar(index)
+  avatar: mockData.image.avatar(index),
+  socialFacebook: mockData.socialLink.socialFacebook(index),
+  socialTwitter: mockData.socialLink.socialTwitter(index),
+  socialInstagram: mockData.socialLink.socialInstagram(index),
+  socialLinkedin: mockData.socialLink.socialLinkedin(index),
+  //socialName: mockData.socialName(index)
+  //link : Social.link(index)
 }));
 
 // ----------------------------------------------------------------------
@@ -32,11 +49,17 @@ type MemberCardProps = {
     name: string;
     role: string | undefined;
     avatar: string;
+    socialFacebook: string;
+    socialTwitter: string;
+    socialInstagram: string;
+    socialLinkedin: string;
+    //socialName: string;
+   // link : string;
   };
 };
 
 function MemberCard({ member }: MemberCardProps) {
-  const { name, role, avatar } = member;
+  const { name, role, avatar, socialFacebook, socialTwitter, socialInstagram, socialLinkedin} = member;
   return (
     <Card key={name} sx={{ p: 1, mx: 1.5 }}>
       <Typography variant="subtitle1" sx={{ mt: 2, mb: 0.5 }}>
@@ -44,29 +67,31 @@ function MemberCard({ member }: MemberCardProps) {
       </Typography>
       <Typography variant="body2" sx={{ mb: 2, color: 'text.secondary' }}>
         {role}
+        
       </Typography>
       <Box component="img" src={avatar} sx={{ width: '100%', borderRadius: 1.5 }} />
       <Box sx={{ mt: 2, mb: 1 }}>
-        {[facebookFill, instagramFilled, linkedinFill, twitterFill].map((social, index) => (
-          <IconButton key={index}>
-            <Icon icon={social} width={20} height={20} />
+        {[{icon: facebookFill, url: socialFacebook}, {icon: twitterFill, url: socialTwitter},{icon: instagramFilled, url: socialInstagram}, {icon: linkedinFill, url: socialLinkedin}].map((social, index) => (
+          <IconButton key={index} href = {social.url} target={'_blank'}>
+            <Icon icon={social.icon} width={20} height={20} />
           </IconButton>
         ))}
       </Box>
-    </Card>
-  );
+    </Card>     
+  ); 
 }
 
 export default function AboutTeam() {
   const carouselRef = useRef<Slider>(null);
-  const theme = useTheme();
+  //const theme = useTheme();
 
   const settings = {
-    slidesToShow: 4,
+    slidesToShow: 3,
     centerMode: true,
     centerPadding: '0 80px',
-    rtl: Boolean(theme.direction === 'rtl'),
+    //rtl: Boolean(theme.direction === 'rtl'),
     responsive: [
+     
       {
         breakpoint: 1279,
         settings: { slidesToShow: 3 }
@@ -113,7 +138,7 @@ export default function AboutTeam() {
             color: (theme) => (theme.palette.mode === 'light' ? 'text.secondary' : 'common.white')
           }}
         >
-          Minimal will provide you support if you have any problems, our support team will reply
+          Smile Tech will provide you support if you have any problems, our support team will reply
           within a day and we also have detailed documentation.
         </Typography>
       </MotionInView>
@@ -126,7 +151,9 @@ export default function AboutTeam() {
             </MotionInView>
           ))}
         </Slider>
+        
         <CarouselControlsArrowsBasic2
+        
           onNext={handleNext}
           onPrevious={handlePrevious}
           sx={{ transform: 'translateY(-64px)' }}
@@ -142,5 +169,7 @@ export default function AboutTeam() {
         View all team members
       </Button>
     </Container>
+
   );
+  
 }

@@ -24,10 +24,10 @@ import { ComingSoonIllustration } from '../assets';
 // ----------------------------------------------------------------------
 
 const SOCIALS = [
-  {
-    name: 'Facebook',
-    icon: <Icon icon={facebookFill} width={24} height={24} color="#1877F2" />
-  },
+  // {
+  //   name: 'Facebook',
+  //   icon: <Icon icon={facebookFill} width={24} height={24} color="#1877F2" />
+  // },
   {
     name: 'Instagram',
     icon: <Icon icon={instagramFilled} width={24} height={24} color="#D7336D" />
@@ -36,10 +36,10 @@ const SOCIALS = [
     name: 'Linkedin',
     icon: <Icon icon={linkedinFill} width={24} height={24} color="#006097" />
   },
-  {
-    name: 'Twitter',
-    icon: <Icon icon={twitterFill} width={24} height={24} color="#1C9CEA" />
-  }
+  // {
+  //   name: 'Twitter',
+  //   icon: <Icon icon={twitterFill} width={24} height={24} color="#1C9CEA" />
+  // }
 ];
 
 const RootStyle = styled(Page)(({ theme }) => ({

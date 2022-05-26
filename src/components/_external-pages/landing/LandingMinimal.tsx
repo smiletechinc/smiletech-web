@@ -19,7 +19,7 @@ const CARDS = [
     description: 'Easy to customize and extend each component, saving you time and money.'
   },
   {
-    icon: '/static/brand/logo_single.svg',
+    icon: '/static/logo/Mug-Logo-yellow-r.png',
     title: 'Branding',
     description: 'Consistent design in colors, fonts ... makes brand recognition easy.'
   }
@@ -104,12 +104,12 @@ export default function LandingMinimalHelps() {
               variant="overline"
               sx={{ mb: 2, color: 'text.secondary', textAlign: 'center' }}
             >
-              Minimal
+              Smile Tech
             </Typography>
           </MotionInView>
           <MotionInView variants={varFadeInDown}>
             <Typography variant="h2" sx={{ textAlign: 'center' }}>
-              What minimal helps you?
+              What smile tech helps you?
             </Typography>
           </MotionInView>
         </Box>

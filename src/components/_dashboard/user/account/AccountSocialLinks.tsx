@@ -43,7 +43,7 @@ export default function AccountSocialLinks({ myProfile }: { myProfile: Profile }
     enableReinitialize: true,
     initialValues: {
       facebookLink: myProfile.facebookLink,
-      instagramLink: myProfile.instagramLink,
+      googleLink: myProfile.googleLink,
       linkedinLink: myProfile.linkedinLink,
       twitterLink: myProfile.twitterLink
     },

@@ -18,27 +18,27 @@ import useCollapseDrawer from '../../hooks/useCollapseDrawer';
 // routes
 import { PATH_DASHBOARD, PATH_DOCS } from '../../routes/paths';
 // components
-import Logo from '../../components/Logo';
-import MyAvatar from '../../components/MyAvatar';
-import Scrollbar from '../../components/Scrollbar';
+ import Logo from '../../components/Logo';
+// import MyAvatar from '../../components/MyAvatar';
+// import Scrollbar from '../../components/Scrollbar';
 import NavSection from '../../components/NavSection';
 import { MHidden } from '../../components/@material-extend';
 //
-import sidebarConfig from './SidebarConfig';
+//import sidebarConfig from './SidebarConfig';
 import { DocIllustration } from '../../assets';
 // ----------------------------------------------------------------------
 
 const DRAWER_WIDTH = 280;
 const COLLAPSE_WIDTH = 102;
 
-const RootStyle = styled('div')(({ theme }) => ({
-  [theme.breakpoints.up('lg')]: {
-    flexShrink: 0,
-    transition: theme.transitions.create('width', {
-      duration: theme.transitions.duration.complex
-    })
-  }
-}));
+// const RootStyle = styled('div')(({ theme }) => ({
+//   [theme.breakpoints.up('lg')]: {
+//     flexShrink: 0,
+//     transition: theme.transitions.create('width', {
+//       duration: theme.transitions.duration.complex
+//     })
+//   }
+// }));
 
 const AccountStyle = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -112,100 +112,101 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  const renderContent = (
-    <Scrollbar
-      sx={{
-        height: 1,
-        '& .simplebar-content': {
-          height: 1,
-          display: 'flex',
-          flexDirection: 'column'
-        }
-      }}
-    >
-      <Stack
-        spacing={3}
-        sx={{
-          px: 2.5,
-          pt: 3,
-          pb: 2,
-          ...(isCollapse && {
-            alignItems: 'center'
-          })
-        }}
-      >
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
-            <Logo />
-          </Box>
+  // const renderContent = (
+  //   <Scrollbar
+  //     sx={{
+  //       height: 1,
+  //       '& .simplebar-content': {
+  //         height: 1,
+  //         display: 'flex',
+  //         flexDirection: 'column'
+  //       }
+  //     }}
+  //   >
+  //     <Stack
+  //       spacing={3}
+  //       sx={{
+  //         px: 2.5,
+  //         pt: 3,
+  //         pb: 2,
+  //         ...(isCollapse && {
+  //           alignItems: 'center'
+  //         })
+  //       }}
+  //     >
+  //       <Stack direction="row" alignItems="center" justifyContent="space-between">
+  //         <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
+  //           <Logo />
+  //         </Box>
 
-          <MHidden width="lgDown">
-            {!isCollapse && (
-              <IconCollapse onToggleCollapse={onToggleCollapse} collapseClick={collapseClick} />
-            )}
-          </MHidden>
-        </Stack>
+  //         <MHidden width="lgDown">
+  //           {!isCollapse && (
+  //             <IconCollapse onToggleCollapse={onToggleCollapse} collapseClick={collapseClick} />
+  //           )}
+  //         </MHidden>
+  //       </Stack>
 
-        {isCollapse ? (
-          <MyAvatar sx={{ mx: 'auto', mb: 2 }} />
-        ) : (
-          <Link underline="none" component={RouterLink} to={PATH_DASHBOARD.user.account}>
-            <AccountStyle>
-              <MyAvatar />
-              <Box sx={{ ml: 2 }}>
-                <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                  {user?.displayName}
-                </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  {user?.role}
-                </Typography>
-              </Box>
-            </AccountStyle>
-          </Link>
-        )}
-      </Stack>
+  //       {isCollapse ? (
+  //         <MyAvatar sx={{ mx: 'auto', mb: 2 }} />
+  //       ) : (
+  //         <Link underline="none" component={RouterLink} to={PATH_DASHBOARD.user.account}>
+  //           <AccountStyle>
+  //             <MyAvatar />
+  //             <Box sx={{ ml: 2 }}>
+  //               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
+  //                 {user?.displayName}
+  //               </Typography>
+  //               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+  //                 {user?.role}
+  //               </Typography>
+  //             </Box>
+  //           </AccountStyle>
+  //         </Link>
+  //       )}
+  //     </Stack>
 
-      <NavSection navConfig={sidebarConfig} isShow={!isCollapse} />
+      {/* <NavSection navConfig={sidebarConfig} isShow={!isCollapse} /> */}
 
-      <Box sx={{ flexGrow: 1 }} />
+  //     <Box sx={{ flexGrow: 1 }} />
 
-      {!isCollapse && (
-        <Stack
-          spacing={3}
-          alignItems="center"
-          sx={{ px: 5, pb: 5, mt: 10, width: 1, textAlign: 'center' }}
-        >
-          <DocIllustration sx={{ width: 1 }} />
+  //     {!isCollapse && (
+  //       <Stack
+  //         spacing={3}
+  //         alignItems="center"
+  //         sx={{ px: 5, pb: 5, mt: 10, width: 1, textAlign: 'center' }}
+  //       >
+  //         <DocIllustration sx={{ width: 1 }} />
 
-          <div>
-            <Typography gutterBottom variant="subtitle1">
-              Hi, {user?.displayName}
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              Need help?
-              <br /> Please check our docs
-            </Typography>
-          </div>
-          <Button href={PATH_DOCS} target="_blank" variant="contained">
-            Documentation
-          </Button>
-        </Stack>
-      )}
-    </Scrollbar>
-  );
+  //         {/* <div>
+  //           <Typography gutterBottom variant="subtitle1">
+  //             Hi, {user?.displayName}
+  //           </Typography>
+  //           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+  //             Need help?
+  //             <br /> Please check our docs
+  //           </Typography>
+  //         </div>
+  //         <Button href={PATH_DOCS} target="_blank" variant="contained">
+  //           Documentation
+  //         </Button> */}
+  //       </Stack>
+  //     )}
+  //   </Scrollbar>
+  // );
 
   return (
-    <RootStyle
-      sx={{
-        width: {
-          lg: isCollapse ? COLLAPSE_WIDTH : DRAWER_WIDTH
-        },
-        ...(collapseClick && {
-          position: 'absolute'
-        })
-      }}
+    // <NavSection navConfig={Navsection} isShow={!isCollapse} />
+    {/*<RootStyle
+      // sx={{
+      //   width: {
+      //     sm: isCollapse 
+      //   },
+      //   ...(collapseClick && {
+      //     position: 'absolute'
+      //   })
+      // }}
     >
-      <MHidden width="lgUp">
+      {/* <MHidden width="lgUp">
         <Drawer
           open={isOpenSidebar}
           onClose={onCloseSidebar}
@@ -213,11 +214,11 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
             sx: { width: DRAWER_WIDTH }
           }}
         >
-          {renderContent}
+          {/* {renderContent} 
         </Drawer>
-      </MHidden>
+      </MHidden> 
 
-      <MHidden width="lgDown">
+      {/* <MHidden width="lgDown">
         <Drawer
           open
           variant="persistent"
@@ -240,9 +241,9 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
             }
           }}
         >
-          {renderContent}
+          {/* {renderContent} 
         </Drawer>
-      </MHidden>
-    </RootStyle>
+      </MHidden> 
+    </RootStyle>*/}
   );
 }

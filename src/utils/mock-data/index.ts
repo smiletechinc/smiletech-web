@@ -9,6 +9,8 @@ import { fullAddress, country } from './address';
 import { firstName, lastName, fullName } from './name';
 import { title, sentence, description } from './text';
 import { price, rating, age, percent } from './number';
+import { socialFacebook, socialTwitter, socialInstagram, socialLinkedin } from './socialLink';
+// import { socialName } from './socialName';
 
 // ----------------------------------------------------------------------
 
@@ -45,7 +47,16 @@ const mockData = {
     feed: (index: number) => `/static/mock-images/feeds/feed_${index + 1}.jpg`,
     product: (index: number) => `/static/mock-images/products/product_${index + 1}.jpg`,
     avatar: (index: number) => `/static/mock-images/avatars/avatar_${index + 1}.jpg`
-  }
+  },
+  socialLink:{
+    socialFacebook: (index: number) => socialFacebook[index],
+    socialTwitter: (index: number) => socialTwitter[index],
+    socialInstagram: (index: number) => socialInstagram[index],
+    socialLinkedin: (index: number) => socialLinkedin[index]  
+   },
+  // socialName:{
+  //   socialName: (index: number) => socialName[index]
+  // }
 };
 
 export default mockData;

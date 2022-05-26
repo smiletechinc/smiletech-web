@@ -13,7 +13,7 @@ export default function SettingStretch() {
 
   return (
     <CardActionArea sx={{ color: 'primary.main', borderRadius: 1 }}>
-      <Paper
+      {/* <Paper
         onClick={onToggleStretch}
         sx={{
           p: 2.5,
@@ -51,7 +51,7 @@ export default function SettingStretch() {
             height={20}
           />
         </Stack>
-      </Paper>
+      </Paper> */}
     </CardActionArea>
   );
 }

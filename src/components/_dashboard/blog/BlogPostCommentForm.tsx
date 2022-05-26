@@ -46,9 +46,10 @@ export default function BlogPostCommentForm() {
         resetForm();
         setSubmitting(false);
         enqueueSnackbar('Post success', { variant: 'success' });
-      } catch (error) {
+      } catch (error:any) {
         console.error(error);
         setSubmitting(false);
+        
         setErrors(error.code);
       }
     }

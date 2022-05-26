@@ -196,7 +196,7 @@ const POST_COMMENTS = [
   }
 ];
 
-export const posts = [...Array(23)].map((_, index) => {
+export const posts = [...Array(3)].map((_, index) => {
   return {
     id: mockData.id(index),
     cover: mockData.image.cover(index),

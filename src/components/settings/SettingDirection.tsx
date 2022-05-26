@@ -13,11 +13,12 @@ import useSettings from '../../hooks/useSettings';
 // ----------------------------------------------------------------------
 
 export default function SettingDirection() {
-  const { themeDirection, onChangeDirection } = useSettings();
+  //const { themeDirection, onChangeDirection } = useSettings();
 
   return (
-    <RadioGroup name="themeDirection" value={themeDirection} onChange={onChangeDirection}>
-      <Grid container spacing={2.5} dir="ltr">
+    <RadioGroup name="themeDirection">
+     {/* value={themeDirection} onChange={onChangeDirection}> */}
+      {/* <Grid container spacing={2.5} dir="ltr">
         {['ltr', 'rtl'].map((direction, index) => (
           <Grid item xs={6} key={direction}>
             <Paper
@@ -74,7 +75,7 @@ export default function SettingDirection() {
             </Paper>
           </Grid>
         ))}
-      </Grid>
+      </Grid> */}
     </RadioGroup>
   );
 }

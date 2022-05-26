@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Icon } from '@iconify/react';
-import closeFill from '@iconify/icons-eva/close-fill';
-import options2Fill from '@iconify/icons-eva/options-2-fill';
+// import { Icon } from '@iconify/react';
+// import closeFill from '@iconify/icons-eva/close-fill';
+// import options2Fill from '@iconify/icons-eva/options-2-fill';
 // material
 import { Box, Backdrop, Paper, Tooltip, Divider, Typography, Stack } from '@mui/material';
 //
 import Scrollbar from '../Scrollbar';
-import { MIconButton } from '../@material-extend';
-import SettingMode from './SettingMode';
-import SettingColor from './SettingColor';
-import SettingStretch from './SettingStretch';
-import SettingDirection from './SettingDirection';
-import SettingFullscreen from './SettingFullscreen';
+//import { MIconButton } from '../@material-extend';
+// import SettingMode from './SettingMode';
+// import SettingColor from './SettingColor';
+// import SettingStretch from './SettingStretch';
+//import Settin//gDirection from './SettingDirection';
+//import SettingFullscreen from './SettingFullscreen';
 
 // ----------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ export default function Settings() {
           ...(open && { right: 12 })
         }}
       >
-        <Box
+         {/*<Box
           sx={{
             p: 0.5,
             px: '4px',
@@ -82,8 +82,8 @@ export default function Settings() {
             >
               <Icon icon={open ? closeFill : options2Fill} width={20} height={20} />
             </MIconButton>
-          </Tooltip>
-        </Box>
+          </Tooltip> 
+            </Box> */}
 
         <Paper
           sx={{
@@ -101,38 +101,38 @@ export default function Settings() {
             justifyContent="space-between"
             sx={{ py: 2, pr: 1, pl: 2.5 }}
           >
-            <Typography variant="subtitle1">Settings</Typography>
+            {/* <Typography variant="subtitle1">Settings</Typography>
             <MIconButton onClick={handleClose}>
               <Icon icon={closeFill} width={20} height={20} />
-            </MIconButton>
+            </MIconButton> */}
           </Stack>
-          <Divider />
+          {/* <Divider /> */}
 
-          <Scrollbar sx={{ height: 1 }}>
+           <Scrollbar sx={{ height: 1 }}>
             <Stack spacing={4} sx={{ pt: 3, px: 3, pb: 15 }}>
-              <Stack spacing={1.5}>
+              {/*<Stack spacing={1.5}>
                 <Typography variant="subtitle2">Mode</Typography>
                 <SettingMode />
-              </Stack>
+              </Stack> */}
 
-              <Stack spacing={1.5}>
+              {/* <Stack spacing={1.5}>
                 <Typography variant="subtitle2">Direction</Typography>
                 <SettingDirection />
-              </Stack>
+              </Stack> */}
 
-              <Stack spacing={1.5}>
+              {/* <Stack spacing={1.5}>
                 <Typography variant="subtitle2">Color</Typography>
                 <SettingColor />
-              </Stack>
+              </Stack> */}
 
-              <Stack spacing={1.5}>
+              {/* <Stack spacing={1.5}>
                 <Typography variant="subtitle2">Stretch</Typography>
                 <SettingStretch />
               </Stack>
 
-              <SettingFullscreen />
-            </Stack>
-          </Scrollbar>
+              <SettingFullscreen /> */}
+             </Stack> 
+           </Scrollbar> 
         </Paper>
       </Box>
     </>

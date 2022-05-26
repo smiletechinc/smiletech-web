@@ -53,7 +53,7 @@ export type Profile = {
   school: string;
   role: string;
   facebookLink: string;
-  instagramLink: string;
+  googleLink: string;
   linkedinLink: string;
   twitterLink: string;
 };

@@ -160,6 +160,7 @@ export default function Router() {
       children: [
         { element: <LandingPage /> },
         { path: 'about-us', element: <About /> },
+        { path: 'services', element: <Service /> },
         { path: 'contact-us', element: <Contact /> },
         { path: 'faqs', element: <Faqs /> },
         {
@@ -263,6 +264,7 @@ const Kanban = Loadable(lazy(() => import('../pages/dashboard/Kanban')));
 // Main
 const LandingPage = Loadable(lazy(() => import('../pages/LandingPage')));
 const About = Loadable(lazy(() => import('../pages/About')));
+const Service = Loadable(lazy(() => import('../pages/Service')));
 const Contact = Loadable(lazy(() => import('../pages/Contact')));
 const Faqs = Loadable(lazy(() => import('../pages/Faqs')));
 const ComingSoon = Loadable(lazy(() => import('../pages/ComingSoon')));

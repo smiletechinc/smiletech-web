@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import twitterFill from '@iconify/icons-eva/twitter-fill';
 import facebookFill from '@iconify/icons-eva/facebook-fill';
 import linkedinFill from '@iconify/icons-eva/linkedin-fill';
-import instagramFilled from '@iconify/icons-ant-design/instagram-filled';
+import googleFilled from '@iconify/icons-ant-design/google-circle-fill';
 // material
 import { styled } from '@mui/material/styles';
 import { Link, Card, CardHeader, Stack } from '@mui/material'; // @types
@@ -21,7 +21,7 @@ const IconStyle = styled(Icon)(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function ProfileSocialInfo({ profile }: { profile: Profile }) {
-  const { facebookLink, instagramLink, linkedinLink, twitterLink } = profile;
+  const { facebookLink, googleLink, linkedinLink, twitterLink } = profile;
 
   const SOCIALS = [
     {
@@ -35,9 +35,9 @@ export default function ProfileSocialInfo({ profile }: { profile: Profile }) {
       href: twitterLink
     },
     {
-      name: 'Instagram',
-      icon: <IconStyle icon={instagramFilled} color="#D7336D" />,
-      href: instagramLink
+      name: 'Google',
+      icon: <IconStyle icon={googleFilled} color="#D7336D" />,
+      href: googleLink
     },
     {
       name: 'Facebook',

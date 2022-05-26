@@ -20,7 +20,7 @@ const MOCK_SKILLS = [...Array(3)].map((_, index) => ({
 }));
 
 const RootStyle = styled("div")(({ theme }) => ({
-  //textAlign: "center",
+  textAlign: "center",
   paddingTop: theme.spacing(20),
   paddingBottom: theme.spacing(10),
   [theme.breakpoints.up("md")]: {
@@ -59,7 +59,7 @@ function ProgressItem({ progress }: ProgressItemProps) {
   );
 }
 
-export default function AboutWhat() {
+export default function ServiceReact() {
   const theme = useTheme();
   const isLight = theme.palette.mode === "light";
   const shadow = `-40px 40px 80px ${alpha(
@@ -71,11 +71,9 @@ export default function AboutWhat() {
     <RootStyle>
       <Container maxWidth="lg">
         <Grid container spacing={3}>
-          {/* spacing between adjacent grid of the images */}
           <MHidden width="mdDown">
             <Grid item xs={12} md={6} lg={7} sx={{ pr: { md: 7 } }}>
               <Grid container spacing={3} alignItems="flex-end">
-                {/* spacing between images */}
                 <Grid item xs={6}>
                   <MotionInView variants={varFadeInUp}>
                     <Box
@@ -89,7 +87,6 @@ export default function AboutWhat() {
                   </MotionInView>
                 </Grid>
                 <Grid item xs={6}>
-                  {/* xs 6 is the display of the images when screen is small */}
                   <MotionInView variants={varFadeInUp}>
                     <Box component="img" src="/static/about/what-2.jpg" sx={{ borderRadius: 2 }} />
                   </MotionInView>
@@ -97,10 +94,11 @@ export default function AboutWhat() {
               </Grid>
             </Grid>
           </MHidden>
+
           <Grid item xs={12} md={6} lg={5}>
             <MotionInView variants={varFadeInRight}>
               <Typography variant="h2" sx={{ mb: 3 }}>
-                React
+                MERN
               </Typography>
             </MotionInView>
 
@@ -136,6 +134,76 @@ export default function AboutWhat() {
                 Check out our work
               </Button>
             </MotionInView> */}
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Container maxWidth="lg">
+        <Grid container spacing={3}>
+          <MHidden width="mdDown">
+            <Grid item xs={12} md={6} lg={7} sx={{ pr: { md: 7 } }}>
+              <Grid container spacing={3} alignItems="flex-end">
+                <Grid item xs={6}>
+                  <Box
+                    component="img"
+                    src="/static/about/what-1.jpg"
+                    sx={{
+                      mt: 10,
+                      borderRadius: 2,
+                      boxShadow: shadow
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <MotionInView variants={varFadeInRight}>
+                    <Box component="img" src="/static/about/what-2.jpg" sx={{ borderRadius: 2 }} />
+                  </MotionInView>
+                </Grid>
+              </Grid>
+            </Grid>
+          </MHidden>
+
+          <Grid item xs={12} md={6} lg={5} sx={{ mt: 10 }}>
+            <MotionInView variants={varFadeInRight}>
+              <Typography variant="h2" sx={{ mb: 3 }}>
+                React Native
+              </Typography>
+            </MotionInView>
+            <Box sx={{ my: 5 }}>
+              <MotionInView variants={varFadeInRight}>
+                <Typography
+                  sx={{
+                    color: (theme) =>
+                      theme.palette.mode === "light" ? "text.secondary" : "common.white"
+                  }}
+                >
+                  Phontinent Technologies hold all the amazing features of React Native development,
+                  which provides help in developing a great cross-platform mobile application. We
+                  are renowned for having expertise in different areas such as e-commerce,
+                  educational apps, booking apps, finance app, portal apps, and many more using
+                  React Native. React Native helps in reducing the time used in the development
+                  cycle, which helps in delivering our services quickly to our clients.
+                </Typography>
+              </MotionInView>
+            </Box>
+            {/* <Box sx={{ my: 5 }}>
+              {MOCK_SKILLS.map((progress) => (
+                <MotionInView key={progress.label} variants={varFadeInRight}>
+                  <ProgressItem progress={progress} />
+                </MotionInView>
+              ))}
+            </Box> */}
+
+            <MotionInView variants={varFadeInRight}>
+              <Button
+                variant="outlined"
+                color="inherit"
+                size="large"
+                endIcon={<Icon icon={roundArrowRightAlt} width={24} height={24} />}
+              >
+                Check out our work
+              </Button>
+            </MotionInView>
           </Grid>
         </Grid>
       </Container>

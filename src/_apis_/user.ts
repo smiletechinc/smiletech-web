@@ -19,9 +19,9 @@ mock.onGet('/api/user/profile').reply(() => {
     company: mockData.company(1),
     school: mockData.company(2),
     role: 'Manager',
-    facebookLink: `https://www.facebook.com/caitlyn.kerluke`,
-    instagramLink: `https://www.instagram.com/caitlyn.kerluke`,
-    linkedinLink: `https://www.linkedin.com/in/caitlyn.kerluke`,
+    facebookLink: `https://www.facebook.com/smiletechofficial`,
+    googleLink: `smiletechpakistan@gmail.com`,
+    linkedinLink: `https://www.linkedin.com/company/smiletechinc`,
     twitterLink: `https://www.twitter.com/caitlyn.kerluke`
   };
 

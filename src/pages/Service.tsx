@@ -3,13 +3,7 @@ import { styled } from "@mui/material/styles";
 import { Divider } from "@mui/material";
 // components
 import Page from "../components/Page";
-import {
-  AboutHero,
-  // AboutWhat,
-  AboutTeam,
-  AboutVision,
-  AboutTestimonials
-} from "../components/_external-pages/about";
+import { ServiceHero, ServiceReact, ServiceVision } from "../components/_external-pages/services";
 
 // ----------------------------------------------------------------------
 
@@ -22,15 +16,13 @@ const RootStyle = styled(Page)(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function About() {
+export default function Serivce() {
   return (
-    <RootStyle title="About us | Smile Tech">
-      <AboutHero />
-      {/* <AboutWhat /> */}
-      <AboutVision />
-      <Divider orientation="vertical" sx={{ my: 10, mx: "auto", width: 2, height: 40 }} />
-      <AboutTeam />
-      <AboutTestimonials />
+    <RootStyle title="Service | Smile Tech">
+      <ServiceHero />
+      <ServiceVision />
+      <Divider orientation="vertical" sx={{ mb: "0", mx: "auto", width: 2, height: 40 }} />
+      <ServiceReact />
     </RootStyle>
   );
 }

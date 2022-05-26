@@ -24,16 +24,16 @@ export default function HeaderBreadcrumbs({
 }: HeaderBreadcrumbsProps) {
   return (
     <Box sx={{ mb: 5, ...sx }}>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Box sx={{ flexGrow: 1 }}>
-          <Typography variant="h4" gutterBottom>
+       <Box sx={{ display: 'flex', alignItems: 'center' }}>
+         <Box sx={{ flexGrow: 1 }}> 
+          {/* <Typography variant="h4" gutterBottom>
             {heading}
-          </Typography>
-          <MBreadcrumbs links={links} {...other} />
-        </Box>
+          </Typography> 
+          {/* <MBreadcrumbs links={links} {...other} /> */} 
+        </Box> 
 
         {action && <Box sx={{ flexShrink: 0 }}>{action}</Box>}
-      </Box>
+        </Box>  
 
       <Box sx={{ mt: 2 }}>
         {isString(moreLink) ? (

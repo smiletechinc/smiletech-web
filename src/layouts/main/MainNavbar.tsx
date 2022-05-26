@@ -92,7 +92,7 @@ export default function MainNavbar() {
             <Logo />
           </RouterLink>
           <Label color="info" sx={{ ml: 1 }}>
-            Ts v2.6.0
+            Smile Tech
           </Label>
           <Box sx={{ flexGrow: 1 }} />
 
@@ -105,7 +105,7 @@ export default function MainNavbar() {
             target="_blank"
             href="https://material-ui.com/store/items/minimal-dashboard/"
           >
-            Purchase Now
+            Start Discussion
           </Button>
 
           <MHidden width="mdUp">

@@ -55,7 +55,7 @@ export default function LandingAdvertisement() {
           <MotionInView variants={varFadeInDown} sx={{ color: 'common.white', mb: 5 }}>
             <Typography variant="h2">
               Get started with
-              <br /> minimal kit today
+              <br /> smile tech today
             </Typography>
           </MotionInView>
           <MotionInView variants={varFadeInDown}>

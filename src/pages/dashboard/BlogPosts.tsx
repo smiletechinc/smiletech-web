@@ -77,10 +77,10 @@ export default function BlogPosts() {
   };
 
   return (
-    <Page title="Blog: Posts | Minimal-UI">
+    <Page title="Blog: Posts | Smile Tech">
       <Container maxWidth={themeStretch ? false : 'lg'}>
-        <HeaderBreadcrumbs
-          heading="Blog"
+         <HeaderBreadcrumbs
+           heading="Blog"
           links={[
             { name: 'Dashboard', href: PATH_DASHBOARD.root },
             { name: 'Blog', href: PATH_DASHBOARD.blog.root },
@@ -96,7 +96,9 @@ export default function BlogPosts() {
               New Post
             </Button>
           }
-        />
+        /> 
+      
+        
 
         <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
           <BlogPostsSearch />

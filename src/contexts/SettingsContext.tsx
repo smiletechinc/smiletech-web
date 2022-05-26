@@ -12,7 +12,13 @@ const PRIMARY_COLOR = [
   // DEFAULT
   {
     name: 'default',
-    ...palette.light.primary
+   // ...palette.light.primary
+    lighter: '#fcf30c',//'#C8FACD',
+  light: '#fcdf0c',//'#fccb0b',//'#5BE584'
+  main: '#fccb0c',//'#00AB55',
+  dark: '#fcb70c',//'#fbcb11',//'#d9c302',
+  darker: '#fca30c',//'#d9c302',//'#005249'
+  contrastText: "#fff"
   },
   // PURPLE
   {

@@ -2,6 +2,8 @@ import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import flashFill from '@iconify/icons-eva/flash-fill';
 import { Link as RouterLink } from 'react-router-dom';
+//import logo from '../../../../public/static/logo/';
+
 // material
 import { styled } from '@mui/material/styles';
 import { Button, Box, Link, Container, Typography, Stack, StackProps } from '@mui/material';
@@ -79,36 +81,37 @@ export default function LandingHero() {
           <ContentStyle>
             <motion.div variants={varFadeInRight}>
               <Typography variant="h1" sx={{ color: 'common.white' }}>
-                Start a <br />
-                new project <br /> with
+                Let's build  <br />
+                a new project <br /> with
                 <Typography component="span" variant="h1" sx={{ color: 'primary.main' }}>
-                  &nbsp;Minimal
+                  &nbsp;Smile Tech
                 </Typography>
               </Typography>
             </motion.div>
 
             <motion.div variants={varFadeInRight}>
               <Typography sx={{ color: 'common.white' }}>
-                The starting point for your next project based on easy-to-customize Material-UI ©
-                helps you build apps faster and better.
+                Our next big thing is one meeting away
+         
               </Typography>
             </motion.div>
 
-            <Stack
-              component={motion.div}
-              variants={varFadeInRight}
-              direction="row"
-              spacing={1}
-              justifyContent={{ xs: 'center', md: 'flex-start' }}
-            >
-              <img
+             <Stack
+              // component={motion.div}
+              // variants={varFadeInRight}
+              // direction="row"
+              // spacing={1}
+              // justifyContent={{ xs: 'center', md: 'flex-start' }}
+              >
+            
+              {/* <img
                 alt="sketch icon"
                 src="/static/home/ic_sketch_small.svg"
                 width={20}
                 height={20}
-              />
+              /> */}
 
-              <Link
+              {/* <Link
                 underline="always"
                 href="https://www.sketch.com/s/0fa4699d-a3ff-4cd5-a3a7-d851eb7e17f0"
                 target="_blank"
@@ -116,8 +119,8 @@ export default function LandingHero() {
                 sx={{ typography: 'body2' }}
               >
                 Preview in Sketch Cloud
-              </Link>
-            </Stack>
+              </Link> */}
+            </Stack> 
 
             <motion.div variants={varFadeInRight}>
               <Button
@@ -126,12 +129,13 @@ export default function LandingHero() {
                 component={RouterLink}
                 to={PATH_DASHBOARD.root}
                 startIcon={<Icon icon={flashFill} width={20} height={20} />}
+                //Icon icon={flashFill} img src= "../static/logo/Mug-Logo-yellow-r.png"
               >
-                Live Preview
+                Start Discussion
               </Button>
             </motion.div>
 
-            <Stack
+            {/* <Stack
               direction="row"
               spacing={1.5}
               justifyContent={{ xs: 'center', md: 'flex-start' }}
@@ -142,7 +146,7 @@ export default function LandingHero() {
               <motion.img variants={varFadeInRight} src="/static/home/ic_react.svg" />
               <motion.img variants={varFadeInRight} src="/static/home/ic_js.svg" />
               <motion.img variants={varFadeInRight} src="/static/home/ic_ts.svg" />
-            </Stack>
+            </Stack> */}
           </ContentStyle>
         </Container>
       </RootStyle>

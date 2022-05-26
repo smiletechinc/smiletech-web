@@ -143,7 +143,7 @@ function MenuDesktopItem({
               const { subheader, items } = list;
 
               return (
-                <Grid key={subheader} item xs={12} md={subheader === 'Dashboard' ? 6 : 2}>
+                <Grid key={subheader} item xs={12} md={subheader === 'Featured' ? 6 : 2}>
                   <List disablePadding>
                     <ListSubheader
                       disableSticky
@@ -172,7 +172,7 @@ function MenuDesktopItem({
                           }
                         }}
                       >
-                        {item.title === 'Dashboard' ? (
+                        {item.title === 'Featured' ? (
                           <CardActionArea
                             sx={{
                               py: 5,

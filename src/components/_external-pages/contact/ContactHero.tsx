@@ -9,25 +9,25 @@ import { varFadeIn, varWrapEnter, varFadeInRight, TextAnimate } from '../../anim
 
 const CONTACTS = [
   {
-    country: 'Bali',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(239) 555-0108'
+    country: 'Pakistan',
+    address: 'Office 1404, NSTP Building, Nust H-12',
+    phoneNumber: '(+92) 300-6509281'
   },
-  {
-    country: 'London',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(319) 555-0115'
-  },
-  {
-    country: 'Prague',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(252) 555-0126'
-  },
-  {
-    country: 'Moscow',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(307) 555-0133'
-  }
+  // {
+  //   country: 'London',
+  //   address: '508 Bridle Avenue Newnan, GA 30263',
+  //   phoneNumber: '(319) 555-0115'
+  // },
+  // {
+  //   country: 'Prague',
+  //   address: '508 Bridle Avenue Newnan, GA 30263',
+  //   phoneNumber: '(252) 555-0126'
+  // },
+  // {
+  //   country: 'Moscow',
+  //   address: '508 Bridle Avenue Newnan, GA 30263',
+  //   phoneNumber: '(307) 555-0133'
+  // }
 ];
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
@@ -66,8 +66,9 @@ export default function ContactHero() {
           </Box>
 
           <Grid container spacing={5} sx={{ mt: 5, color: 'common.white' }}>
+            {/* xs={12} sm={6} md={3} lg={2}  */}
             {CONTACTS.map((contact) => (
-              <Grid key={contact.country} item xs={12} sm={6} md={3} lg={2} sx={{ pr: { md: 5 } }}>
+              <Grid key={contact.country} item xs={12} sm={8} sx={{ pr: { md: 5 } }}>
                 <motion.div variants={varFadeIn}>
                   <Typography variant="h6" paragraph>
                     {contact.country}

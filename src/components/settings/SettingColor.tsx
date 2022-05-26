@@ -14,11 +14,12 @@ import useSettings from '../../hooks/useSettings';
 // ----------------------------------------------------------------------
 
 export default function SettingColor() {
-  const { themeColor, onChangeColor, colorOption } = useSettings();
+  //const { themeColor, onChangeColor, colorOption } = useSettings();
 
   return (
-    <RadioGroup name="themeColor" value={themeColor} onChange={onChangeColor}>
-      <Grid container spacing={1.5} dir="ltr">
+    <RadioGroup name="themeColor" > 
+    {/* value={themeColor} onChange={onChangeColor}> */}
+      {/* <Grid container spacing={1.5} dir="ltr">
         {colorOption.map((color) => {
           const colorName = color.name;
           const colorValue = color.value;
@@ -79,7 +80,7 @@ export default function SettingColor() {
             </Grid>
           );
         })}
-      </Grid>
+      </Grid> */}
     </RadioGroup>
   );
 }
