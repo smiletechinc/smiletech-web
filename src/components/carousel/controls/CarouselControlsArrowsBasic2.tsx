@@ -1,13 +1,13 @@
-import { Icon } from '@iconify/react';
-import arrowLeftFill from '@iconify/icons-eva/arrow-left-fill';
-import arrowRightFill from '@iconify/icons-eva/arrow-right-fill';
-import roundKeyboardArrowLeft from '@iconify/icons-ic/round-keyboard-arrow-left';
-import roundKeyboardArrowRight from '@iconify/icons-ic/round-keyboard-arrow-right';
+import { Icon } from "@iconify/react";
+import arrowLeftFill from "@iconify/icons-eva/arrow-left-fill";
+import arrowRightFill from "@iconify/icons-eva/arrow-right-fill";
+import roundKeyboardArrowLeft from "@iconify/icons-ic/round-keyboard-arrow-left";
+import roundKeyboardArrowRight from "@iconify/icons-ic/round-keyboard-arrow-right";
 // material
-import { useTheme, styled } from '@mui/material/styles';
-import { Box, BoxProps } from '@mui/material';
+import { useTheme, styled } from "@mui/material/styles";
+import { Box, BoxProps } from "@mui/material";
 //
-import { MIconButton } from '../../@material-extend';
+import { MIconButton } from "../../@material-extend";
 
 // ----------------------------------------------------------------------
 
@@ -23,29 +23,29 @@ const RootStyle = styled(Box)(({ theme }) => ({
   bottom: 0,
   zIndex: 9,
   height: SIZE,
-  width: '100%',
-  margin: 'auto',
-  display: 'flex',
-  position: 'absolute',
+  width: "100%",
+  margin: "auto",
+  display: "flex",
+  position: "absolute",
   padding: theme.spacing(0, 2),
-  justifyContent: 'space-between'
+  justifyContent: "space-between"
 }));
 
 const ArrowStyle = styled(MIconButton)(({ theme }) => ({
   width: SIZE,
   height: SIZE,
   opacity: 0.48,
-  display: 'flex',
-  cursor: 'pointer',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: theme.palette.common.white,
-  background: theme.palette.grey[900],
+  display: "flex",
+  cursor: "pointer",
+  alignItems: "center",
+  justifyContent: "center",
+  color: theme.palette.grey[900],
+  background: theme.palette.common.white,
   borderRadius: theme.shape.borderRadiusSm,
-  transition: theme.transitions.create('opacity'),
-  '&:hover': {
+  transition: theme.transitions.create("opacity"),
+  "&:hover": {
     opacity: 1,
-    background: theme.palette.grey[900]
+    background: "yellow"
   }
 }));
 
@@ -64,7 +64,7 @@ export default function CarouselControlsArrowsBasic2({
   ...other
 }: CarouselControlsArrowsBasic2Props) {
   const theme = useTheme();
-  const isRTL = theme.direction === 'rtl';
+  const isRTL = theme.direction === "rtl";
 
   return (
     <RootStyle {...other}>

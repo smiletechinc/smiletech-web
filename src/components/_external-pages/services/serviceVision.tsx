@@ -55,7 +55,7 @@ export default function ServiceVision() {
             </Typography>
           </MotionInView>
           <MotionInView variants={varFadeInRight}>
-            <Typography sx={{ textAlign: "left" }}>
+            <Typography sx={{ textAlign: "center" }}>
               We, at Smile Tech, are a team of young software developers with experience in
               developing web and mobile applications. We, Development Company in Islamabd can
               provide creative, functionally-rich and user-centric applications for you customers to
