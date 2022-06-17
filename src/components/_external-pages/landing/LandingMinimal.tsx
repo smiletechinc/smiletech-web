@@ -1,75 +1,77 @@
 // material
-import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, Grid, Card, Container, Typography, useMediaQuery } from '@mui/material';
+import { alpha, useTheme, styled } from "@mui/material/styles";
+import { Box, Grid, Card, Container, Typography, useMediaQuery } from "@mui/material";
 //
-import { varFadeInUp, MotionInView, varFadeInDown } from '../../animate';
+import { varFadeInUp, MotionInView, varFadeInDown } from "../../animate";
 
 // ----------------------------------------------------------------------
 
 const CARDS = [
   {
-    icon: '/static/icons/ic_design.svg',
-    title: 'UI & UX Design',
+    icon: "/static/icons/ic_design.svg",
+    title: "UI & UX Design",
     description:
-      'The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.'
+      "The set is built on the principles of the atomic design system. This helps you create projects faster and easily customize packages for your projects"
   },
   {
-    icon: '/static/icons/ic_code.svg',
-    title: 'Development',
-    description: 'Easy to customize and extend each component, saving you time and money.'
+    icon: "/static/icons/ic_code.svg",
+    title: "Development",
+    description:
+      "We provide components that are easy to customize and extend, saving you time and money."
   },
   {
-    icon: '/static/logo/Mug-Logo-yellow-r.png',
-    title: 'Branding',
-    description: 'Consistent design in colors, fonts ... makes brand recognition easy.'
+    icon: "/static/logo/Mug-Logo-yellow-r.png",
+    title: "Branding",
+    description:
+      "We provide consistent designs and optimized graphics, making brand recognition easier for your company."
   }
 ];
 
 const shadowIcon = (color: string) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled("div")(({ theme }) => ({
   paddingTop: theme.spacing(15),
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.up("md")]: {
     paddingBottom: theme.spacing(15)
   }
 }));
 
 const CardStyle = styled(Card)(({ theme }) => {
   const shadowCard = (opacity: number) =>
-    theme.palette.mode === 'light'
+    theme.palette.mode === "light"
       ? alpha(theme.palette.grey[500], opacity)
       : alpha(theme.palette.common.black, opacity);
 
   return {
     maxWidth: 380,
     minHeight: 440,
-    margin: 'auto',
-    textAlign: 'center',
+    margin: "auto",
+    textAlign: "center",
     padding: theme.spacing(10, 5, 0),
     boxShadow: `-40px 40px 80px 0 ${shadowCard(0.48)}`,
-    [theme.breakpoints.up('md')]: {
-      boxShadow: 'none',
-      backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800]
+    [theme.breakpoints.up("md")]: {
+      boxShadow: "none",
+      backgroundColor: theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
     },
-    '&.cardLeft': {
-      [theme.breakpoints.up('md')]: { marginTop: -40 }
+    "&.cardLeft": {
+      [theme.breakpoints.up("md")]: { marginTop: -40 }
     },
-    '&.cardCenter': {
-      [theme.breakpoints.up('md')]: {
+    "&.cardCenter": {
+      [theme.breakpoints.up("md")]: {
         marginTop: -80,
         backgroundColor: theme.palette.background.paper,
         boxShadow: `-40px 40px 80px 0 ${shadowCard(0.4)}`,
-        '&:before': {
+        "&:before": {
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
           zIndex: -1,
           content: "''",
-          margin: 'auto',
-          position: 'absolute',
-          width: 'calc(100% - 40px)',
-          height: 'calc(100% - 40px)',
+          margin: "auto",
+          position: "absolute",
+          width: "calc(100% - 40px)",
+          height: "calc(100% - 40px)",
           borderRadius: theme.shape.borderRadiusMd,
           backgroundColor: theme.palette.background.paper,
           boxShadow: `-20px 20px 40px 0 ${shadowCard(0.12)}`
@@ -79,10 +81,10 @@ const CardStyle = styled(Card)(({ theme }) => {
   };
 });
 
-const CardIconStyle = styled('img')(({ theme }) => ({
+const CardIconStyle = styled("img")(({ theme }) => ({
   width: 40,
   height: 40,
-  margin: 'auto',
+  margin: "auto",
   marginBottom: theme.spacing(10),
   filter: shadowIcon(theme.palette.primary.main)
 }));
@@ -91,8 +93,8 @@ const CardIconStyle = styled('img')(({ theme }) => ({
 
 export default function LandingMinimalHelps() {
   const theme = useTheme();
-  const isLight = theme.palette.mode === 'light';
-  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const isLight = theme.palette.mode === "light";
+  const isDesktop = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
     <RootStyle>
@@ -102,14 +104,23 @@ export default function LandingMinimalHelps() {
             <Typography
               component="p"
               variant="overline"
-              sx={{ mb: 2, color: 'text.secondary', textAlign: 'center' }}
+              sx={{ mb: 2, color: "text.secondary", textAlign: "center" }}
             >
               Smile Tech
             </Typography>
           </MotionInView>
           <MotionInView variants={varFadeInDown}>
-            <Typography variant="h2" sx={{ textAlign: 'center' }}>
-              What smile tech helps you?
+            <Typography variant="h2" sx={{ textAlign: "center" }}>
+              What we have to offer
+            </Typography>
+          </MotionInView>
+          <MotionInView variants={varFadeInUp}>
+            <Typography
+              component="p"
+              variant="overline"
+              sx={{ mb: 2, color: "text.secondary", textAlign: "center" }}
+            >
+              We create the most engaging Website User Interface
             </Typography>
           </MotionInView>
         </Box>
@@ -119,7 +130,7 @@ export default function LandingMinimalHelps() {
             <Grid key={card.title} item xs={12} md={4}>
               <MotionInView variants={varFadeInUp}>
                 <CardStyle
-                  className={(index === 0 && 'cardLeft') || (index === 1 && 'cardCenter') || ''}
+                  className={(index === 0 && "cardLeft") || (index === 1 && "cardCenter") || ""}
                 >
                   <CardIconStyle
                     src={card.icon}
@@ -136,7 +147,7 @@ export default function LandingMinimalHelps() {
                   <Typography variant="h5" paragraph>
                     {card.title}
                   </Typography>
-                  <Typography sx={{ color: isLight ? 'text.secondary' : 'common.white' }}>
+                  <Typography sx={{ color: isLight ? "text.secondary" : "common.white" }}>
                     {card.description}
                   </Typography>
                 </CardStyle>
