@@ -1,30 +1,30 @@
-import { useRef } from 'react';
-import Slider from 'react-slick';
-import { Icon } from '@iconify/react';
-import twitterFill from '@iconify/icons-eva/twitter-fill';
-import linkedinFill from '@iconify/icons-eva/linkedin-fill';
-import facebookFill from '@iconify/icons-eva/facebook-fill';
-import roundArrowRightAlt from '@iconify/icons-ic/round-arrow-right-alt';
-import instagramFilled from '@iconify/icons-ant-design/instagram-filled';
+import { useRef } from "react";
+import Slider from "react-slick";
+import { Icon } from "@iconify/react";
+import twitterFill from "@iconify/icons-eva/twitter-fill";
+import linkedinFill from "@iconify/icons-eva/linkedin-fill";
+import facebookFill from "@iconify/icons-eva/facebook-fill";
+import roundArrowRightAlt from "@iconify/icons-ic/round-arrow-right-alt";
+import instagramFilled from "@iconify/icons-ant-design/instagram-filled";
 // material
 //import { useTheme } from '@mui/material/styles';
-import { Box, Card, Button, Container, Typography, IconButton } from '@mui/material';
+import { Box, Card, Button, Container, Typography, IconButton } from "@mui/material";
 // utils
-import mockData from '../../../utils/mock-data';
+import mockData from "../../../utils/mock-data";
 //
-import { varFadeIn, varFadeInUp, MotionInView, varFadeInDown } from '../../animate';
-import { CarouselControlsArrowsBasic2 } from '../../carousel';
-import { socialInstagram, socialLinkedin } from 'utils/mock-data/socialLink';
+import { varFadeIn, varFadeInUp, MotionInView, varFadeInDown } from "../../animate";
+import { CarouselControlsArrowsBasic2 } from "../../carousel";
+import { socialInstagram, socialLinkedin } from "utils/mock-data/socialLink";
 
 // ----------------------------------------------------------------------
 
-//  const Social = [  
+//  const Social = [
 //   { link:'https://www.facebook.com/hfshan247'},
 //   {link:'https://twitter.com/hfshan247'}
 //   { name:'instagram', icon:'instagramFilled', link:'https://www.instagram.com/hfshan247/' },
 //   { name:'twitter', icon:'twitterFill', link:'https://twitter.com/hfshan247' },
 //   { name:'linkedin', icon:'linkedinFill', link:'https://www.linkedin.com/in/hfshan247/ '}
- //]
+//]
 
 // ----------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ const MOCK_MEMBERS = [...Array(3)].map((_, index) => ({
   socialFacebook: mockData.socialLink.socialFacebook(index),
   socialTwitter: mockData.socialLink.socialTwitter(index),
   socialInstagram: mockData.socialLink.socialInstagram(index),
-  socialLinkedin: mockData.socialLink.socialLinkedin(index),
+  socialLinkedin: mockData.socialLink.socialLinkedin(index)
   //socialName: mockData.socialName(index)
   //link : Social.link(index)
 }));
@@ -54,31 +54,36 @@ type MemberCardProps = {
     socialInstagram: string;
     socialLinkedin: string;
     //socialName: string;
-   // link : string;
+    // link : string;
   };
 };
 
 function MemberCard({ member }: MemberCardProps) {
-  const { name, role, avatar, socialFacebook, socialTwitter, socialInstagram, socialLinkedin} = member;
+  const { name, role, avatar, socialFacebook, socialTwitter, socialInstagram, socialLinkedin } =
+    member;
   return (
     <Card key={name} sx={{ p: 1, mx: 1.5 }}>
       <Typography variant="subtitle1" sx={{ mt: 2, mb: 0.5 }}>
         {name}
       </Typography>
-      <Typography variant="body2" sx={{ mb: 2, color: 'text.secondary' }}>
+      <Typography variant="body2" sx={{ mb: 2, color: "text.secondary" }}>
         {role}
-        
       </Typography>
-      <Box component="img" src={avatar} sx={{ width: '100%', borderRadius: 1.5 }} />
+      <Box component="img" src={avatar} sx={{ width: "100%", borderRadius: 1.5 }} />
       <Box sx={{ mt: 2, mb: 1 }}>
-        {[{icon: facebookFill, url: socialFacebook}, {icon: twitterFill, url: socialTwitter},{icon: instagramFilled, url: socialInstagram}, {icon: linkedinFill, url: socialLinkedin}].map((social, index) => (
-          <IconButton key={index} href = {social.url} target={'_blank'}>
+        {[
+          { icon: facebookFill, url: socialFacebook },
+          { icon: twitterFill, url: socialTwitter },
+          { icon: instagramFilled, url: socialInstagram },
+          { icon: linkedinFill, url: socialLinkedin }
+        ].map((social, index) => (
+          <IconButton key={index} href={social.url} target={"_blank"}>
             <Icon icon={social.icon} width={20} height={20} />
           </IconButton>
         ))}
       </Box>
-    </Card>     
-  ); 
+    </Card>
+  );
 }
 
 export default function AboutTeam() {
@@ -88,13 +93,12 @@ export default function AboutTeam() {
   const settings = {
     slidesToShow: 3,
     centerMode: true,
-    centerPadding: '0 80px',
+    centerPadding: "0 80px",
     //rtl: Boolean(theme.direction === 'rtl'),
     responsive: [
-     
       {
-        breakpoint: 1279,
-        settings: { slidesToShow: 3 }
+        breakpoint: 1024,
+        settings: { slidesToShow: 3, infinite: true }
       },
       {
         breakpoint: 959,
@@ -116,9 +120,9 @@ export default function AboutTeam() {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ pb: 10, textAlign: 'center' }}>
+    <Container maxWidth="lg" sx={{ pb: 10, textAlign: "center" }}>
       <MotionInView variants={varFadeInDown}>
-        <Typography component="p" variant="overline" sx={{ mb: 2, color: 'text.secondary' }}>
+        <Typography component="p" variant="overline" sx={{ mb: 2, color: "text.secondary" }}>
           Dream team
         </Typography>
       </MotionInView>
@@ -133,9 +137,9 @@ export default function AboutTeam() {
         <Typography
           sx={{
             mb: 10,
-            mx: 'auto',
+            mx: "auto",
             maxWidth: 630,
-            color: (theme) => (theme.palette.mode === 'light' ? 'text.secondary' : 'common.white')
+            color: (theme) => (theme.palette.mode === "light" ? "text.secondary" : "common.white")
           }}
         >
           Smile Tech will provide you support if you have any problems, our support team will reply
@@ -143,7 +147,7 @@ export default function AboutTeam() {
         </Typography>
       </MotionInView>
 
-      <Box sx={{ position: 'relative' }}>
+      <Box sx={{ position: "relative" }}>
         <Slider ref={carouselRef} {...settings}>
           {MOCK_MEMBERS.map((member) => (
             <MotionInView key={member.id} variants={varFadeIn}>
@@ -151,12 +155,11 @@ export default function AboutTeam() {
             </MotionInView>
           ))}
         </Slider>
-        
+
         <CarouselControlsArrowsBasic2
-        
           onNext={handleNext}
           onPrevious={handlePrevious}
-          sx={{ transform: 'translateY(-64px)' }}
+          sx={{ transform: "translateY(-64px)" }}
         />
       </Box>
       <Button
@@ -164,12 +167,10 @@ export default function AboutTeam() {
         color="inherit"
         size="large"
         endIcon={<Icon icon={roundArrowRightAlt} width={24} height={24} />}
-        sx={{ mx: 'auto' }}
+        sx={{ mx: "auto" }}
       >
         View all team members
       </Button>
     </Container>
-
   );
-  
 }

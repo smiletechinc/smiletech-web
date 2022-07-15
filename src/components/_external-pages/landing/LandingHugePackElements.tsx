@@ -101,8 +101,6 @@ export default function LandingHugePackElements() {
               <MotionInView variants={varFadeInUp}>
                 <Typography variant="h2" sx={{ mb: 3 }}>
                   Tasbeeh App
-                  <br />
-                  elements
                 </Typography>
               </MotionInView>
 
@@ -113,8 +111,8 @@ export default function LandingHugePackElements() {
                     color: isLight ? "text.secondary" : "common.white"
                   }}
                 >
-                  We collected most popular elements. Menu, sliders, buttons, inputs etc. are all
-                  here. Just dive in!
+                  A digital platform to track all of your tasbeeh count stored in this user friendly
+                  application.
                 </Typography>
               </MotionInView>
 
@@ -126,7 +124,7 @@ export default function LandingHugePackElements() {
                   component={RouterLink}
                   to={PATH_PAGE.components}
                 >
-                  View All Components
+                  See More
                 </Button>
               </MotionInView>
             </ContentStyle>

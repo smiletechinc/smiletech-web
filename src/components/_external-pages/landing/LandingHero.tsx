@@ -1,30 +1,30 @@
-import { Icon } from '@iconify/react';
-import { motion } from 'framer-motion';
-import flashFill from '@iconify/icons-eva/flash-fill';
-import { Link as RouterLink } from 'react-router-dom';
+import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
+import flashFill from "@iconify/icons-eva/flash-fill";
+import { Link as RouterLink } from "react-router-dom";
 //import logo from '../../../../public/static/logo/';
 
 // material
-import { styled } from '@mui/material/styles';
-import { Button, Box, Link, Container, Typography, Stack, StackProps } from '@mui/material';
+import { styled } from "@mui/material/styles";
+import { Button, Box, Link, Container, Typography, Stack, StackProps } from "@mui/material";
 // routes
-import { PATH_DASHBOARD } from '../../../routes/paths';
+import { PATH_DASHBOARD } from "../../../routes/paths";
 //
-import { varFadeIn, varFadeInUp, varWrapEnter, varFadeInRight } from '../../animate';
+import { varFadeIn, varFadeInUp, varWrapEnter, varFadeInRight } from "../../animate";
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
-  position: 'relative',
+  position: "relative",
   backgroundColor: theme.palette.grey[400],
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.up("md")]: {
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100vh',
-    display: 'flex',
-    position: 'fixed',
-    alignItems: 'center'
+    width: "100%",
+    height: "100vh",
+    display: "flex",
+    position: "fixed",
+    alignItems: "center"
   }
 }));
 
@@ -32,24 +32,24 @@ const ContentStyle = styled((props: StackProps) => <Stack spacing={5} {...props}
   ({ theme }) => ({
     zIndex: 10,
     maxWidth: 520,
-    margin: 'auto',
-    textAlign: 'center',
-    position: 'relative',
+    margin: "auto",
+    textAlign: "center",
+    position: "relative",
     paddingTop: theme.spacing(15),
     paddingBottom: theme.spacing(15),
-    [theme.breakpoints.up('md')]: {
-      margin: 'unset',
-      textAlign: 'left'
+    [theme.breakpoints.up("md")]: {
+      margin: "unset",
+      textAlign: "left"
     }
   })
 );
 
 const HeroOverlayStyle = styled(motion.img)({
   zIndex: 9,
-  width: '100%',
-  height: '100%',
-  objectFit: 'cover',
-  position: 'absolute'
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  position: "absolute"
 });
 
 const HeroImgStyle = styled(motion.img)(({ theme }) => ({
@@ -57,13 +57,13 @@ const HeroImgStyle = styled(motion.img)(({ theme }) => ({
   right: 0,
   bottom: 0,
   zIndex: 8,
-  width: '100%',
-  margin: 'auto',
-  position: 'absolute',
-  [theme.breakpoints.up('lg')]: {
-    right: '8%',
-    width: 'auto',
-    height: '48vh'
+  width: "100%",
+  margin: "auto",
+  position: "absolute",
+  [theme.breakpoints.up("lg")]: {
+    right: "8%",
+    width: "auto",
+    height: "48vh"
   }
 }));
 
@@ -80,30 +80,33 @@ export default function LandingHero() {
         <Container maxWidth="lg">
           <ContentStyle>
             <motion.div variants={varFadeInRight}>
-              <Typography variant="h1" sx={{ color: 'common.white' }}>
-                Let's build  <br />
-                a new project <br /> with
-                <Typography component="span" variant="h1" sx={{ color: 'primary.main' }}>
-                  &nbsp;Smile Tech
+              <Typography variant="h1" sx={{ color: "common.white" }}>
+                Welcome to
+                <Typography component="span" variant="h1" sx={{ color: "primary.main" }}>
+                  &nbsp;Smile Tech,
+                </Typography>
+                <br />
+                home to all your
+                <Typography component="span" variant="h1">
+                  &nbsp; IT needs
                 </Typography>
               </Typography>
             </motion.div>
 
             <motion.div variants={varFadeInRight}>
-              <Typography sx={{ color: 'common.white' }}>
-                Our next big thing is one meeting away
-         
+              <Typography sx={{ color: "common.white" }}>
+                Our 4 domains include Web development, App development, Computer Vision and
+                Artificial Intelligence.
               </Typography>
             </motion.div>
 
-             <Stack
-              // component={motion.div}
-              // variants={varFadeInRight}
-              // direction="row"
-              // spacing={1}
-              // justifyContent={{ xs: 'center', md: 'flex-start' }}
-              >
-            
+            <Stack
+            // component={motion.div}
+            // variants={varFadeInRight}
+            // direction="row"
+            // spacing={1}
+            // justifyContent={{ xs: 'center', md: 'flex-start' }}
+            >
               {/* <img
                 alt="sketch icon"
                 src="/static/home/ic_sketch_small.svg"
@@ -120,7 +123,7 @@ export default function LandingHero() {
               >
                 Preview in Sketch Cloud
               </Link> */}
-            </Stack> 
+            </Stack>
 
             <motion.div variants={varFadeInRight}>
               <Button
@@ -150,7 +153,7 @@ export default function LandingHero() {
           </ContentStyle>
         </Container>
       </RootStyle>
-      <Box sx={{ height: { md: '100vh' } }} />
+      <Box sx={{ height: { md: "100vh" } }} />
     </>
   );
 }
