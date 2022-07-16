@@ -2,10 +2,10 @@
 
 export const role = [
   'Chief Innovation Officer',
-  'Full Stack Designer',
   'Frontend Developer',
-  'UX Designer',
-  'UX Designer',
+  'Full Stack Designer',
+  'Content Creator Internee',
+  'Software Developer Internee',
   'Project Manager',
   'Leader',
   'Backend Developer',

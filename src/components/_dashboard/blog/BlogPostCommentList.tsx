@@ -1,9 +1,9 @@
 // material
-import { Box, List } from '@mui/material';
+import { Box, List } from "@mui/material";
 // @types
-import { Post } from '../../../@types/blog';
+import { Post } from "../../../@types/blog";
 //
-import BlogPostCommentItem from './BlogPostCommentItem';
+import BlogPostCommentItem from "./BlogPostCommentItem";
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ export default function BlogPostCommentList({ post }: BlogPostCommentListProps) 
                     tagUser={reply.tagUser}
                     postedAt={reply.postedAt}
                     message={reply.message}
-                    name={user?.name || ''}
+                    name={user?.name || ""}
                     avatarUrl={user?.avatarUrl}
                     hasReply
                   />

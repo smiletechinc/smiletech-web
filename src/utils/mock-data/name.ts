@@ -2,10 +2,10 @@
 
 export const fullName = [
   'Hussain Farooq',
-  'Ali Hassan',
   'Farhan Fareed',
-  'Harrison Stein',
-  'Reece Chung',
+  'Ali Hassan',
+  'Inshirah Akmal',
+  'Muizzah Khan',
   'Lainey Davidson',
   'Cristopher Cardenas',
   'Melanie Noble',

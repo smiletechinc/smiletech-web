@@ -1,10 +1,10 @@
-import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
-import { forwardRef, useEffect, useCallback, ReactNode } from 'react';
+import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import { forwardRef, useEffect, useCallback, ReactNode } from "react";
 // material
-import { Box, BoxProps } from '@mui/material';
+import { Box, BoxProps } from "@mui/material";
 // utils
-import track from '../utils/analytics';
+import track from "../utils/analytics";
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ interface PageProps extends BoxProps {
   title?: string;
 }
 
-const Page = forwardRef<HTMLDivElement, PageProps>(({ children, title = '', ...other }, ref) => {
+const Page = forwardRef<HTMLDivElement, PageProps>(({ children, title = "", ...other }, ref) => {
   const { pathname } = useLocation();
 
   const sendPageViewEvent = useCallback(() => {

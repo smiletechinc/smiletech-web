@@ -247,7 +247,7 @@ export default function MainNavbar() {
           <RouterLink to="/">
             <Logo />
           </RouterLink>
-          <Label color="info" sx={{ ml: 1 }}>
+          <Label color="warning" sx={{ ml: 1 }}>
             Smile Tech
           </Label>
           <Box sx={{ flexGrow: 1 }} />

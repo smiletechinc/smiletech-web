@@ -1,21 +1,21 @@
-import { ReactNode } from 'react';
-import { styled } from '@mui/material/styles';
-import { Box, BoxProps } from '@mui/material';
+import { ReactNode } from "react";
+import { styled } from "@mui/material/styles";
+import { Box, BoxProps } from "@mui/material";
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  listStyle: 'none',
-  justifyContent: 'center',
-  '& li': {
+  display: "flex",
+  listStyle: "none",
+  justifyContent: "center",
+  "& li": {
     width: 24,
     height: 24,
     opacity: 0.32,
-    cursor: 'pointer',
-    '&.slick-active': {
+    cursor: "pointer",
+    "&.slick-active": {
       opacity: 1,
-      '& .dotActive': {
+      "& .dotActive": {
         width: 18,
         borderRadius: 8
       }
@@ -23,11 +23,11 @@ const RootStyle = styled(Box)(({ theme }) => ({
   }
 }));
 
-const DotStyle = styled('span')(({ theme }) => ({
+const DotStyle = styled("span")(({ theme }) => ({
   width: 8,
   height: 8,
-  borderRadius: '50%',
-  transition: theme.transitions.create('all', {
+  borderRadius: "50%",
+  transition: theme.transitions.create("all", {
     easing: theme.transitions.easing.easeInOut,
     duration: 360
   })
@@ -51,17 +51,17 @@ export default function CarouselControlsPaging2({ color, ...other }: CarouselCon
     customPaging: () => (
       <Box
         sx={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
         }}
       >
         <DotStyle
           className="dotActive"
           sx={{
-            bgcolor: color || 'primary.main'
+            bgcolor: color || "common.white"
           }}
         />
       </Box>

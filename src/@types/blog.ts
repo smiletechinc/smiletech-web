@@ -51,6 +51,10 @@ export type PostComment = {
   users: BlogUser[];
   replyComment: ReplyComment[];
 };
+// export type PostBody = {
+//   softwareDevelopment: string;
+//   growBuissness: string;
+// }
 
 export type Post = {
   id: string;
@@ -66,7 +70,7 @@ export type Post = {
     name: string;
     avatarUrl: string;
   };
-  tags: string[];
+  // tags: string[];
   body: string;
   favoritePerson: {
     name: string;

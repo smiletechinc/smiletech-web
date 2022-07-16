@@ -10,6 +10,8 @@ import { firstName, lastName, fullName } from './name';
 import { title, sentence, description } from './text';
 import { price, rating, age, percent } from './number';
 import { socialFacebook, socialTwitter, socialInstagram, socialLinkedin } from './socialLink';
+// import { softwareDevelopment, growBuissness  } from './postBody';
+import { postBodies } from './postBody'
 // import { socialName } from './socialName';
 
 // ----------------------------------------------------------------------
@@ -18,7 +20,7 @@ const mockData = {
   id: (index: number) => `e99f09a7-dd88-49d5-b1c8-1daf80c2d7b${index + 1}`,
   email: (index: number) => email[index],
   phoneNumber: (index: number) => phoneNumber[index],
-  time: (index: number) => sub(new Date(), { days: index, hours: index }),
+  time: (index: number) => sub(new Date(2022, 6, 1), { days: index, hours: index }),
   boolean: (index: number) => boolean[index],
   role: (index: number) => role[index],
   company: (index: number) => company[index],
@@ -42,6 +44,7 @@ const mockData = {
     age: (index: number) => age[index],
     price: (index: number) => price[index]
   },
+  postBody: (index: number) => postBodies[index],
   image: {
     cover: (index: number) => `/static/mock-images/covers/cover_${index + 1}.jpg`,
     feed: (index: number) => `/static/mock-images/feeds/feed_${index + 1}.jpg`,

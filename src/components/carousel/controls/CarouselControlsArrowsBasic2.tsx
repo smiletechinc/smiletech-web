@@ -45,7 +45,7 @@ const ArrowStyle = styled(MIconButton)(({ theme }) => ({
   transition: theme.transitions.create("opacity"),
   "&:hover": {
     opacity: 1,
-    background: "yellow"
+    background: theme.palette.common.white
   }
 }));
 

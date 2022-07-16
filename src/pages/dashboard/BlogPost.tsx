@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { sentenceCase } from "change-case";
+// import { sentenceCase } from "change-case";
 import { useParams } from "react-router-dom";
 // material
 import { Box, Card, Divider, Skeleton, Container, Typography, Pagination } from "@mui/material";
@@ -7,7 +7,7 @@ import { Box, Card, Divider, Skeleton, Container, Typography, Pagination } from 
 import { useDispatch, useSelector } from "../../redux/store";
 import { getPost, getRecentPosts } from "../../redux/slices/blog";
 // routes
-import { PATH_DASHBOARD } from "../../routes/paths";
+// import { PATH_DASHBOARD } from "../../routes/paths";
 // hooks
 import useSettings from "../../hooks/useSettings";
 // @types
@@ -15,12 +15,13 @@ import { BlogState } from "../../@types/blog";
 // components
 import Page from "../../components/Page";
 import Markdown from "../../components/Markdown";
-import HeaderBreadcrumbs from "../../components/HeaderBreadcrumbs";
+
+// import HeaderBreadcrumbs from "../../components/HeaderBreadcrumbs";
 import {
   BlogPostHero,
   BlogPostTags,
   BlogPostRecent,
-  BlogPostCommentList,
+  // BlogPostCommentList,
   BlogPostCommentForm
 } from "../../components/_dashboard/blog";
 
@@ -68,9 +69,9 @@ export default function BlogPost() {
             <BlogPostHero post={post} />
 
             <Box sx={{ p: { xs: 3, md: 5 } }}>
-              <Typography variant="h6" sx={{ mb: 5 }}>
+              {/* <Typography variant="h6" sx={{ mb: 5 }}>
                 {post.description}
-              </Typography>
+              </Typography> */}
 
               <Markdown children={post.body} />
 
@@ -80,20 +81,20 @@ export default function BlogPost() {
                 <Divider />
               </Box>
 
-              <Box sx={{ display: "flex", mb: 2 }}>
+              {/* <Box sx={{ display: "flex", mb: 2 }}>
                 <Typography variant="h4">Comments</Typography>
                 <Typography variant="subtitle2" sx={{ color: "text.disabled" }}>
                   ({post.comments.length})
                 </Typography>
-              </Box>
+              </Box> */}
 
-              <BlogPostCommentList post={post} />
-
+              {/* <BlogPostCommentList post={post} /> */}
+              {/* 
               <Box sx={{ mb: 5, mt: 3, display: "flex", justifyContent: "flex-end" }}>
                 <Pagination count={8} color="primary" />
-              </Box>
+              </Box> */}
 
-              <BlogPostCommentForm />
+              {/* <BlogPostCommentForm /> */}
             </Box>
           </Card>
         )}
