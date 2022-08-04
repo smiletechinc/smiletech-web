@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { sentenceCase } from "change-case";
 import { useParams } from "react-router-dom";
 // material
@@ -23,6 +23,7 @@ import {
   BlogPostCommentList,
   BlogPostCommentForm
 } from "../../components/_dashboard/blog";
+import { Any } from "@react-spring/types";
 
 // ----------------------------------------------------------------------
 
@@ -44,11 +45,29 @@ export default function BlogPost() {
   const { themeStretch } = useSettings();
   const dispatch = useDispatch();
   const { title = "" } = useParams();
-  const { post, error, recentPosts } = useSelector((state: { blog: BlogState }) => state.blog);
-
+  const { recentPosts } = useSelector((state: { blog: BlogState }) => state.blog);
+  const [post, setPost] = useState({
+    excerpt: "",
+    html: "",
+    comments: "",
+    title: "",
+    meta_description: ""
+  });
+  const [error, setErrors] = useState();
   useEffect(() => {
-    dispatch(getPost(title));
+    // dispatch(getPost(title));
     dispatch(getRecentPosts(title));
+    fetch(
+      `https://smiletech.ghost.io/ghost/api/content/posts/${title}?key=0408c44b747e4fe76fcb4cf47c&fields=meta_description,title,slug,html,id,feature_image,published_at,excerpt,uuid,reading_time,comments,access,created_at,updated_at,visibility,featured`
+    )
+      .then(async (res) => {
+        const post = await res.json();
+        console.log({ post });
+        setPost(post.posts[0]);
+      })
+      .catch((err) => {
+        setErrors(err);
+      });
   }, [dispatch, title]);
 
   return (
@@ -65,29 +84,29 @@ export default function BlogPost() {
 
         {post && (
           <Card>
-            <BlogPostHero post={post} />
+            {/* <BlogPostHero post={post} /> */}
 
             <Box sx={{ p: { xs: 3, md: 5 } }}>
               <Typography variant="h6" sx={{ mb: 5 }}>
-                {post.description}
+                {post.meta_description}
               </Typography>
 
-              <Markdown children={post.body} />
+              <Markdown children={post.html} />
 
               <Box sx={{ my: 5 }}>
                 <Divider />
-                <BlogPostTags post={post} />
+                {/* <BlogPostTags post={post} /> */}
                 <Divider />
               </Box>
 
               <Box sx={{ display: "flex", mb: 2 }}>
                 <Typography variant="h4">Comments</Typography>
                 <Typography variant="subtitle2" sx={{ color: "text.disabled" }}>
-                  ({post.comments.length})
+                  ({post.comments})
                 </Typography>
               </Box>
 
-              <BlogPostCommentList post={post} />
+              {/* <BlogPostCommentList post={post} /> */}
 
               <Box sx={{ mb: 5, mt: 3, display: "flex", justifyContent: "flex-end" }}>
                 <Pagination count={8} color="primary" />

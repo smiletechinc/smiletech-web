@@ -1,5 +1,5 @@
-import { Icon } from '@iconify/react';
-import heartFill from '@iconify/icons-eva/heart-fill';
+import { Icon } from "@iconify/react";
+import heartFill from "@iconify/icons-eva/heart-fill";
 // material
 import {
   Box,
@@ -9,11 +9,11 @@ import {
   Checkbox,
   AvatarGroup,
   FormControlLabel
-} from '@mui/material';
+} from "@mui/material";
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { fShortenNumber } from "../../../utils/formatNumber";
 // @types
-import { Post } from '../../../@types/blog';
+import { Post } from "../../../@types/blog";
 
 // ----------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ export default function BlogPostTags({ post, sx }: BlogPostTagsProps) {
         <Chip key={tag} label={tag} sx={{ m: 0.5 }} />
       ))}
 
-      <Box sx={{ display: 'flex', alignItems: 'center', mt: 3 }}>
+      <Box sx={{ display: "flex", alignItems: "center", mt: 3 }}>
         <FormControlLabel
           control={
             <Checkbox
@@ -46,7 +46,7 @@ export default function BlogPostTags({ post, sx }: BlogPostTagsProps) {
         <AvatarGroup
           max={4}
           sx={{
-            '& .MuiAvatar-root': { width: 32, height: 32 }
+            "& .MuiAvatar-root": { width: 32, height: 32 }
           }}
         >
           {favoritePerson.map((person) => (
