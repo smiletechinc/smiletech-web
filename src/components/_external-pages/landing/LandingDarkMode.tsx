@@ -103,8 +103,7 @@ export default function LandingDarkMode() {
           onNext={handleNext}
           onPrevious={handlePrevious}
           sx={{
-            transform: "translateY(-64px)",
-            color: "yellow"
+            transform: "translateY(-64px)"
           }}
         />
       </Container>

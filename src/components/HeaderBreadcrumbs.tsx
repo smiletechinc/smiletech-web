@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
-import { isString } from 'lodash';
+import { ReactNode } from "react";
+import { isString } from "lodash";
 // material
-import { Box, Typography, Link } from '@mui/material';
+import { Box, Typography, Link } from "@mui/material";
 //
-import { MBreadcrumbs } from './@material-extend';
-import { MBreadcrumbsProps } from './@material-extend/MBreadcrumbs';
+import { MBreadcrumbs } from "./@material-extend";
+import { MBreadcrumbsProps } from "./@material-extend/MBreadcrumbs";
 
 // ----------------------------------------------------------------------
 
@@ -18,22 +18,22 @@ export default function HeaderBreadcrumbs({
   links,
   action,
   heading,
-  moreLink = '' || [],
+  moreLink = "" || [],
   sx,
   ...other
 }: HeaderBreadcrumbsProps) {
   return (
     <Box sx={{ mb: 5, ...sx }}>
-       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-         <Box sx={{ flexGrow: 1 }}> 
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ flexGrow: 1 }}>
           {/* <Typography variant="h4" gutterBottom>
             {heading}
           </Typography> 
-          {/* <MBreadcrumbs links={links} {...other} /> */} 
-        </Box> 
+          {/* <MBreadcrumbs links={links} {...other} /> */}
+        </Box>
 
         {action && <Box sx={{ flexShrink: 0 }}>{action}</Box>}
-        </Box>  
+      </Box>
 
       <Box sx={{ mt: 2 }}>
         {isString(moreLink) ? (
@@ -48,7 +48,7 @@ export default function HeaderBreadcrumbs({
               href={href}
               variant="body2"
               target="_blank"
-              sx={{ display: 'table' }}
+              sx={{ display: "table" }}
             >
               {href}
             </Link>

@@ -28,7 +28,7 @@ import { socialInstagram, socialLinkedin } from "utils/mock-data/socialLink";
 
 // ----------------------------------------------------------------------
 
-const MOCK_MEMBERS = [...Array(3)].map((_, index) => ({
+const MOCK_MEMBERS = [...Array(5)].map((_, index) => ({
   id: mockData.id(index),
   name: mockData.name.fullName(index),
   role: mockData.role(index),

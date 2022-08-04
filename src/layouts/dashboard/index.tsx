@@ -6,7 +6,7 @@ import { styled, useTheme } from "@mui/material/styles";
 import useCollapseDrawer from "../../hooks/useCollapseDrawer";
 //
 import DashboardNavbar from "./DashboardNavbar";
-import DashboardSidebar from "./DashboardSidebar";
+// import DashboardSidebar from "./DashboardSidebar";
 
 // ----------------------------------------------------------------------
 
