@@ -83,7 +83,6 @@ export default function BlogPosts() {
       setFilters(value);
     }
   };
-  console.log({ ghostPosts, sortedPosts });
   return (
     <Page title="Blog: Posts | Smile Tech">
       <Container maxWidth={themeStretch ? false : "lg"}>
@@ -119,7 +118,7 @@ export default function BlogPosts() {
           style={{ overflow: "inherit" }}
         >
           <Grid container spacing={3}>
-            {ghostPosts.map((post: any, index) => (
+            {ghostPosts?.map((post: any, index) => (
               <BlogPostCard key={post.id} post={post} index={index} />
             ))}
           </Grid>
