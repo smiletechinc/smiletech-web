@@ -14,6 +14,7 @@ import { fDate } from "../../../utils/formatTime";
 import { fShortenNumber } from "../../../utils/formatNumber";
 // @types
 import { Post } from "../../../@types/blog";
+import { GhostPost } from "../../../@types/blog";
 //
 import SvgIconStyle from "../../SvgIconStyle";
 
@@ -66,21 +67,22 @@ const CoverImgStyle = styled("img")(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 type BlogPostCardProps = {
-  post: Post;
+  post: GhostPost;
   index: number;
 };
 
 export default function BlogPostCard({ post, index }: BlogPostCardProps) {
-  const { cover, title, comment, view, share, author, createdAt } = post;
+  // const { cover, title, comment, view, share, author, createdAt } = post;
+  const { feature_image, title, author, created_at } = post;
   const linkTo = `${PATH_DASHBOARD.blog.root}/post/${paramCase(title)}`;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
 
-  const POST_INFO = [
-    { number: comment, icon: messageCircleFill },
-    { number: view, icon: eyeFill },
-    { number: share, icon: shareFill }
-  ];
+  // const POST_INFO = [
+  //   { number: comment, icon: messageCircleFill },
+  //   { number: view, icon: eyeFill },
+  //   { number: share, icon: shareFill }
+  // ];
 
   return (
     <Grid item xs={12} sm={latestPostLarge ? 12 : 6} md={latestPostLarge ? 6 : 3}>
@@ -119,8 +121,8 @@ export default function BlogPostCard({ post, index }: BlogPostCardProps) {
             }}
           />
           <AvatarStyle
-            alt={author.name}
-            src={author.avatarUrl}
+            alt="Inshara"
+            src="/static/mock-images/avatars/avatar_4.jpg"
             sx={{
               ...((latestPostLarge || latestPost) && {
                 zIndex: 9,
@@ -132,7 +134,7 @@ export default function BlogPostCard({ post, index }: BlogPostCardProps) {
             }}
           />
 
-          <CoverImgStyle alt={title} src={cover} />
+          <CoverImgStyle alt={title} src={feature_image} />
         </CardMediaStyle>
 
         <CardContent
@@ -150,7 +152,7 @@ export default function BlogPostCard({ post, index }: BlogPostCardProps) {
             variant="caption"
             sx={{ color: "text.disabled", display: "block" }}
           >
-            {fDate(createdAt)}
+            {fDate(created_at)}
           </Typography>
 
           <TitleStyle
@@ -165,7 +167,7 @@ export default function BlogPostCard({ post, index }: BlogPostCardProps) {
             {title}
           </TitleStyle>
 
-          <InfoStyle>
+          {/* <InfoStyle>
             {POST_INFO.map((info, index) => (
               <Box
                 key={index}
@@ -182,7 +184,7 @@ export default function BlogPostCard({ post, index }: BlogPostCardProps) {
                 <Typography variant="caption">{fShortenNumber(info.number)} </Typography>
               </Box>
             ))}
-          </InfoStyle>
+          </InfoStyle> */}
         </CardContent>
       </Card>
     </Grid>

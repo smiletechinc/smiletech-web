@@ -13,9 +13,9 @@ export const title = [
   'Cutting Edge Technologies in Software Development in 2022',
   'Deep and Dynamic Linking in Mobile and Web Apps',
   'How to make Earnings from Google AdSense ',
-  'The Next 7 Things You Should Do For Event Success',
-  'The Time Is Running Out! Think About These 7 Ways To Change Your Event',
-  'The 7 Best Things About Event',
+  'What is Web3',
+  'How AI Works',
+  'SEOs in Web',
   'The 7 Biggest Event Mistakes You Can Easily Avoid',
   'The 7 Most Successful Event Companies In Region',
   'Think Your Event Is Safe? 7 Ways You Can Lose It Today',
@@ -128,3 +128,8 @@ export const description = [
   'Dolor numquam maiores praesentium dolorem nihil minus praesentium rem dolorem. Est rerum placeat. Numquam sed magni aliquam laborum enim facere ducimus.',
   'In sint enim nam et itaque et qui. Molestiae a iusto quidem quia temporibus id quia eaque eius. Quis quia consectetur saepe vero et molestias. Rem minima accusamus vitae adipisci molestiae unde voluptate consequatur molestiae. Rerum exercitationem quisquam vitae.'
 ];
+
+export const appBrief = [
+  'A digital platform to track all of your tasbeeh count stored in this user friendly application.',
+  'Digital Quran Brief Summary',
+]

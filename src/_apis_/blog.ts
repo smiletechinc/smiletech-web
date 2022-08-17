@@ -9,7 +9,7 @@ import mockData from '../utils/mock-data';
 import { Post } from '../@types/blog';
 
 // import { softwareDevelopment, growBuissness } from 'utils/mock-data/postBody';
-import { postBodies } from 'utils/mock-data/postBody';
+// import { postBodies } from 'utils/mock-data/postBody';
 // ----------------------------------------------------------------------
 
 // Made with React Quill
@@ -259,7 +259,7 @@ const POST_COMMENTS = [
   }
 ];
 
-export const posts = [...Array(12)].map((_, index) => {
+export const posts = [...Array(15)].map((_, index) => {
   return {
     id: mockData.id(index),
     cover: mockData.image.cover(index),
@@ -288,6 +288,8 @@ export const posts = [...Array(12)].map((_, index) => {
     comments: POST_COMMENTS
   };
 });
+
+
 
 // ----------------------------------------------------------------------
 

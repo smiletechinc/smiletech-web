@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // import { sentenceCase } from "change-case";
 import { useParams } from "react-router-dom";
 // material
@@ -11,7 +11,7 @@ import { getPost, getRecentPosts } from "../../redux/slices/blog";
 // hooks
 import useSettings from "../../hooks/useSettings";
 // @types
-import { BlogState } from "../../@types/blog";
+import { GhostBlogState } from "../../@types/blog";
 // components
 import Page from "../../components/Page";
 import Markdown from "../../components/Markdown";
@@ -45,8 +45,10 @@ export default function BlogPost() {
   const { themeStretch } = useSettings();
   const dispatch = useDispatch();
   const { title = "" } = useParams();
-  const { post, error, recentPosts } = useSelector((state: { blog: BlogState }) => state.blog);
-
+  console.log(title);
+  // const { post, error, recentPosts } = useSelector((state: { blog: BlogState }) => state.blog);
+  const { post, error, recentPosts } = useSelector((state: { blog: GhostBlogState }) => state.blog);
+  const [currentPost, setCurrentPost] = useState({});
   useEffect(() => {
     dispatch(getPost(title));
     dispatch(getRecentPosts(title));
@@ -73,13 +75,13 @@ export default function BlogPost() {
                 {post.description}
               </Typography> */}
 
-              <Markdown children={post.body} />
+              <Markdown children={post.excerpt} />
 
-              <Box sx={{ my: 5 }}>
+              {/* <Box sx={{ my: 5 }}>
                 <Divider />
                 <BlogPostTags post={post} />
                 <Divider />
-              </Box>
+              </Box> */}
 
               {/* <Box sx={{ display: "flex", mb: 2 }}>
                 <Typography variant="h4">Comments</Typography>

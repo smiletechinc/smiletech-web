@@ -1,52 +1,54 @@
-import { Icon } from '@iconify/react';
-import { paramCase } from 'change-case';
-import eyeFill from '@iconify/icons-eva/eye-fill';
-import { Link as RouterLink } from 'react-router-dom';
-import shareFill from '@iconify/icons-eva/share-fill';
-import messageCircleFill from '@iconify/icons-eva/message-circle-fill';
+import { Icon } from "@iconify/react";
+import { paramCase } from "change-case";
+import eyeFill from "@iconify/icons-eva/eye-fill";
+import { Link as RouterLink } from "react-router-dom";
+import shareFill from "@iconify/icons-eva/share-fill";
+import messageCircleFill from "@iconify/icons-eva/message-circle-fill";
 // material
-import { Box, Grid, Link, Card, Avatar, Typography, CardContent } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Box, Grid, Link, Card, Avatar, Typography, CardContent } from "@mui/material";
+import { styled } from "@mui/material/styles";
 // routes
-import { PATH_DASHBOARD } from '../../../routes/paths';
+import { PATH_DASHBOARD } from "../../../routes/paths";
 // utils
-import { fDate } from '../../../utils/formatTime';
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { fDate } from "../../../utils/formatTime";
+import { fShortenNumber } from "../../../utils/formatNumber";
 // @types
-import { Post } from '../../../@types/blog';
+import { Post } from "../../../@types/blog";
+import { GhostPost } from "../../../@types/blog";
 //
-import SvgIconStyle from '../../SvgIconStyle';
+import SvgIconStyle from "../../SvgIconStyle";
 
 // ----------------------------------------------------------------------
 
-const CoverImgStyle = styled('img')(({ theme }) => ({
+const CoverImgStyle = styled("img")(({ theme }) => ({
   top: 0,
-  width: '100%',
-  height: '100%',
-  objectFit: 'cover',
-  position: 'absolute'
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  position: "absolute"
 }));
 
 // ----------------------------------------------------------------------
 
 type PostItemProps = {
-  post: Post;
+  post: GhostPost;
 };
 
 function PostItem({ post }: PostItemProps) {
-  const { cover, title, view, comment, share, author, createdAt } = post;
+  // const { cover, title, view, comment, share, author, createdAt } = post;
+  const { feature_image, title, author } = post;
   const linkTo = `${PATH_DASHBOARD.blog.root}/post/${paramCase(title)}`;
 
-  const POST_INFO = [
-    { number: comment, icon: messageCircleFill },
-    { number: view, icon: eyeFill },
-    { number: share, icon: shareFill }
-  ];
+  // const POST_INFO = [
+  //   { number: comment, icon: messageCircleFill },
+  //   { number: view, icon: eyeFill },
+  //   { number: share, icon: shareFill }
+  // ];
 
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Card>
-        <Box sx={{ position: 'relative', paddingTop: 'calc(100% * 3 / 4)' }}>
+        <Box sx={{ position: "relative", paddingTop: "calc(100% * 3 / 4)" }}>
           <SvgIconStyle
             color="paper"
             src="/static/icons/shape-avatar.svg"
@@ -55,7 +57,7 @@ function PostItem({ post }: PostItemProps) {
               height: 36,
               zIndex: 9,
               bottom: -15,
-              position: 'absolute'
+              position: "absolute"
             }}
           />
           <Avatar
@@ -67,20 +69,20 @@ function PostItem({ post }: PostItemProps) {
               width: 32,
               height: 32,
               bottom: -16,
-              position: 'absolute'
+              position: "absolute"
             }}
           />
-          <CoverImgStyle alt="cover" src={cover} />
+          <CoverImgStyle alt="cover" src={feature_image} />
         </Box>
 
         <CardContent sx={{ pt: 4.5 }}>
-          <Typography
+          {/* <Typography
             gutterBottom
             variant="caption"
-            sx={{ color: 'text.disabled', display: 'block' }}
+            sx={{ color: "text.disabled", display: "block" }}
           >
-            {fDate(createdAt)}
-          </Typography>
+            {fDate(created_at)}
+          </Typography> */}
 
           <Link
             to={linkTo}
@@ -89,10 +91,10 @@ function PostItem({ post }: PostItemProps) {
             component={RouterLink}
             sx={{
               height: 44,
-              overflow: 'hidden',
+              overflow: "hidden",
               WebkitLineClamp: 2,
-              display: '-webkit-box',
-              WebkitBoxOrient: 'vertical'
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical"
             }}
           >
             {title}
@@ -101,25 +103,25 @@ function PostItem({ post }: PostItemProps) {
           <Box
             sx={{
               mt: 3,
-              display: 'flex',
-              flexWrap: 'wrap',
-              color: 'text.disabled',
-              justifyContent: 'flex-end'
+              display: "flex",
+              flexWrap: "wrap",
+              color: "text.disabled",
+              justifyContent: "flex-end"
             }}
           >
-            {POST_INFO.map((info, index) => (
+            {/* {POST_INFO.map((info, index) => (
               <Box
                 key={index}
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
+                  display: "flex",
+                  alignItems: "center",
                   ml: index === 0 ? 0 : 1.5
                 }}
               >
                 <Box component={Icon} icon={info.icon} sx={{ width: 16, height: 16, mr: 0.5 }} />
                 <Typography variant="caption">{fShortenNumber(info.number)}</Typography>
               </Box>
-            ))}
+            ))} */}
           </Box>
         </CardContent>
       </Card>
@@ -128,7 +130,7 @@ function PostItem({ post }: PostItemProps) {
 }
 
 type BlogPostRecentProps = {
-  posts: Post[];
+  posts: GhostPost[];
 };
 
 export default function BlogPostRecent({ posts }: BlogPostRecentProps) {

@@ -10,8 +10,8 @@ import { Box, Avatar, SpeedDial, Typography, useMediaQuery, SpeedDialAction } fr
 // utils
 import { fDate } from "../../../utils/formatTime";
 // @types
-import { Post } from "../../../@types/blog";
-
+// import { Post } from "../../../@types/blog";
+import { GhostPost } from "../../../@types/blog";
 // ----------------------------------------------------------------------
 
 const SOCIALS = [
@@ -97,18 +97,21 @@ const CoverImgStyle = styled("img")(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
+// type BlogPostHeroProps = {
+//   post: Post;
+// };
 type BlogPostHeroProps = {
-  post: Post;
+  post: GhostPost;
 };
 
 export default function BlogPostHero({ post }: BlogPostHeroProps) {
-  const { cover, title, author, createdAt } = post;
+  const { feature_image, title, author, created_at } = post;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <RootStyle>
-      <CoverImgStyle alt="post cover" src={cover} />
+      <CoverImgStyle alt="post cover" src={feature_image} />
 
       <TitleStyle sx={{ typography: "h2" }}>{title}</TitleStyle>
 
@@ -120,7 +123,7 @@ export default function BlogPostHero({ post }: BlogPostHeroProps) {
               {author.name}
             </Typography>
             <Typography variant="body2" sx={{ color: "grey.500" }}>
-              {fDate(createdAt)}
+              {fDate(created_at)}
             </Typography>
           </Box>
         </Box>

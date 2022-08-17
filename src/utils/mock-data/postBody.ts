@@ -711,6 +711,133 @@ Keeping a balance between the number of ads you display may be difficult which m
 </p>
 `;
 
+const Web3= `
+
+<h3>What is Web3</h3>
+<p>Web3 or more widely known as Web3.0 is all the hype nowadays and everyone seems to be talking about it. But if you are a lay-person that is only up to date with Web2.0, this term might confuse you. So, what is Web3.0 exactly, and why is everyone talking about it?<br> 
+To put it simply, Web3 is the name for the next iteration or phase of the online world which aims to reduce user dependency on large-scale tech companies such as Amazon, and Netflix and decentralize their means and power to smaller individual users. <br>
+But why is it called web3.0? Well, to understand that we would have to travel back to the 90s when the very first version of the internet came into existence. 
+</p><br>
+<h3>The Transformation Process</h3><br>
+<h3>Read-only Web1.0</h3>
+<p>This version was famously known as Web1 and offered users only limited control in regards to links and homepages. Websites were not interactive and users could only read or at most upload simple content for others to read online. </p><br>
+<h3>Read-Write Web2.0</h3>
+<p>Then came Web2, which followed more or less the same patterns as before, but in addition, offered computer codes that could enable users to not only open and view files but also edit them. The creation and publication of new content thus marked a new chapter for the internet in the shape of social media.<br> 
+Web2 has become widely adopted all over the world, with media and tech giants such as Facebook having gained control of huge streams of private user data, and using big data for their gains. This has ultimately led to worldwide user concerns. 
+</p><br>
+<h3>Read-Write-Own Web3.0</h3>
+<p>Users have now become skeptical and cautious of their privacy and this skepticism has paved the way for Web3 asking for more control and privacy regarding personal data.<br> 
+Web3 is thus, an evolution of web technologies that use a decentralized system of making applications using extensive Blockchain-based technologies, in addition to AI and machine learning. <br>
+Together, these technologies will create and empower intelligent applications and adaptive interfaces that are more user-friendly and are built on the foundations of user privacy, taking control over from large superpowers. 
+</p><br>
+<h3>When will Web3.0 be available? </h3>
+<p>In essence, Web3 will take a couple of years to fully be integrated into online systems but it has already started to mark the end of an era and the beginning of a new one, in regards to how websites are composed and how their users interact with them.<br> 
+Now, you might be wondering what type of currency Web3 will be built upon. Well, as many of you may have already guessed, cryptocurrency is the leading form of payment for Web3, built and enabled by Blockchain technology. <br>
+Token like ETH that can be used to send and receive money that is fed directly into browsers is also one important tool and eliminates the need for trusted third parties for transactions. 
+</p><br>
+<h3>So, what can we do with Web3? </h3>
+<p>With Web3, you will be able to harvest data faster to end users with the help of AI, by filtering through relevant data according to user demands and needs. This is due to the semantic nature of Web3.0.<br>
+Furthermore, Web3 gives you ownership of your digital assets. This is done by way of Non-fungible tokens i.e., NFTs. Once you are in ownership of certain assets on Web3, its creators cannot take them away from you.<br> 
+Another feature that Web3 provides its users is that censorship resistance. This means that if you are a creator on a platform and decide to leave it to join another, you can simply plug your existence into another interface because it is stored in the Blockchain. <br>
+This is a step away from Web2 which required that if a creator leaves a platform, they lose their following and reputation with the platform. 
+</p><br>
+<h3>But is all positive with Web3.0? </h3><br>
+<p>The main theory behind this radical shift is that of increased user ownership of digital assets. But many criticize that Web3 falls short of its promise of decentralization.<br> 
+This is because although it does come with the promise of distributing ownership to individuals, in reality, ownership is concentrated in the hands of venture capitalists and early adopters of these Blockchain networks.<br> 
+So although, the idea itself is that of power decentralization, what has occurred is that ownership has been redistributed once again following a hierarchical chain and often a centralized infrastructure.<br> 
+An example here is that of Vitalik Buterin who is the co-founder of Ethereum. Since its advent, he has maintained power over this network even after ceasing control of its development. <br>
+Technical barriers to the user experience are also a major concern for Web3. We live in a world where not everyone is tech savvy when it comes to the digital world. Comprehending complex security concerns, technical documentation, and interface navigation are ideas that are lost on much of the user population. 
+</p><br>
+<h3>High transactions fees and low accessibility</h3>
+<p>While some features of Web3 are free of cost and virtually available to everyone, some relative costs such as the cost of transactions are inaccessible to many countries due to high transaction fees and entry barriers.<br> 
+Although the purpose was to move control away from tech magnates, it seems that they are befitting the most out of this scheme due to pre-established technological advancements and assets. <br>
+This makes Web3 only suited to developed and wealthy countries, once again accentuating a gap between countries. There is also a lack of adoption and education about this internet transformation. 
+</p><br>
+<h3>Concluding Remarks</h3>
+<p>Web3 is a revolutionary development that could change the entire landscape of transactions and the virtual marketplace and holds great potential when it comes to the future of technology. <br>
+But even though it offers a range of benefits from decentralized control and ownership to supporting native payments and enhanced mobility across social platforms, it is still virtually inaccessible to many parts of the world. <br>
+To make its transitional process smooth and effective, a lot of mechanisms need to be put in place. The system needs to be regulated by at least some fixed regulations and protectionary measures to maintain user integrity and authority. <br>
+</p>
+`;
+
+const AIWorking= `
+
+<h3>How AI Works</h3>
+<p>AI is something everyone seems to be talking about these days. But what exactly is it? Artificial intelligence (AI) is a field of computer science that is concerned with making machines exhibit some of the characteristics that humans associate with intelligence.<br> 
+In particular, AI seeks to develop "intelligent" systems capable of performing tasks that require human intelligence and learning from data. A number of systems exist today that display what some people consider to be almost human-like behavior, but they still fall short of being able to make decisions based on complex information and make sense of it like humans do.
+</p><br>
+<h3>What is Artificial Intelligence?</h3>
+<p>AI is a computer system that learns and performs tasks on its own. AI can be used to solve problems, perform tasks, make decisions and make predictions. It's not just about machines learning how to play chess or Jeopardy!<br>
+Today, it is all about computers being able to help humans navigate our world more effectively by making recommendations based on data they've collected over time.
+</p><br>
+<h3>How does AI work?</h3>
+<p>AI is a type of software that's designed to learn from experience and make decisions. It's also known as machine learning or neural networks. This kind of software learns as humans do—it becomes better at solving problems over time by ingesting vast amounts of data and using it to improve its understanding of the world around it.</p><br>
+<h3>What does AI do?</h3>
+<p>Now there are various ways to use AI. The technology can perform a variety of tasks, including data analysis. This can include tasks such as searching through large databases, sorting and organizing information, detecting patterns in large sets of data, and more.<br>
+Then we have decision-making. AI can be used to help make decisions about the best way to do things such as scheduling meetings or scheduling patients' appointments based on their health history, preferences, and other factors that may impact how they respond if something happens during those times.<br>
+AI is also readily used today for predictive analytics (also called artificial intelligence). This involves using machine learning algorithms like neural networks or deep learning algorithms which allow computers 'learn' by analyzing past events instead of being programmed with specific instructions ahead of time.<br>
+This makes it possible for computers to learn new skills simply by observing what happens around them! For example: if there's an earthquake somewhere then all our cars would automatically stop driving because they don't know better than us what we should do next!"
+</p><br>
+<h3>How can I add AI to my Business? </h3>
+<p>AI has been a buzzword in business for years, but it's only recently that people have begun to see how AI can be used to solve problems and make the world a better place.<br>
+If you’re a business owner looking for the next big step for your business, AI can be used to help with many of your business functions, including marketing, customer service fronts, and operations and maintenance of your software systems (like CRM). <br>
+Even finance and accounting for accounting purposes and tax reports, HR for recruiting, hiring, onboarding employees, and product development by automating the process of testing new features or designs before they're launched into production are functions that can be performed using AI. <br>
+Many different types of AI can be integrated into your business. Machine learning is one of them. It's an approach where machines learn from experience by observing large amounts of data before making decisions based on those observations. <br>
+Machine learning has been around since the early days of computing, but deep learning is another type of artificial intelligence (AI) that uses large datasets rather than just one example at a time as traditional machine learning does. <br>
+Deep learning uses neural networks—a type of mathematical model inspired by neurons in our brains—to produce accurate predictions about future events.
+</p><br>
+<h3>What does the future of AI look like? </h3>
+<p>The future of AI looks like a lot of things: smart, reliable, creative, and emotional. In the next few years, we may start seeing more accessible AI systems that can be used by people without a background in programming or computer science.<br>
+ These systems will be able to solve problems at work or school more easily than humans could by themselves—and they might even come in handy when you're trying to figure out how your new kitten acts when it's hungry!<br>
+The future also looks bright for emotional intelligence (EI) because it's one of the most important skills needed for success in any profession today (whether it's being an astronaut or an artist).<br> 
+That means we'll probably see even more applications where computers are helping us understand why someone else is feeling bad about something before they do something stupid like yell at them mid-conversation.
+</p><br>
+<h3>Conclusion</h3>
+<p>We can expect to see more of this kind of technology in our everyday lives. It will be integrated into things like vehicles, smart TVs, and smartphones so that they can do things like multitasking or predict what we might want next.<br>
+As more people use these products to communicate with each other and make decisions based on artificial intelligence, it could have a profound impact on human society as we know it today.
+</p>
+`;
+
+const SEOs= `
+
+<h3>SEOs in Web</h3><br>
+<h3>Introduction</h3>
+<p>SEO is a buzzword that seems to underline every conversation there is about online marketing. Being a non-marketer or simply new to the game, you might have heard this term being flung around and it might have left you confused. So what is SEO in simple terms?<br>
+SEO is an acronym for Search Engine Optimization and it's the process of making content on a site more visible to search engines. When you say "SEO" there are many different types that people think of, but the most common one by far is the web optimization.
+</p><br>
+<h3>What is SEO?</h3>
+<p>Search Engine Optimization (SEO) is a process of optimizing a web page to achieve a higher ranking on search engines. In its most basic form, SEO involves using keywords in the title tags, descriptions, and header tags of your site. <br>
+It's a long-term strategy that helps your website rank higher in search engines. In other words, it's all about getting your site to do well in Google and other search engines.
+</p><br>
+<h3>How does SEO work?</h3>
+<p>If you have an online store and want people to find it through search engines instead of social media sites like Facebook or Twitter, then this is where you can start by creating some good titles for each product page so that when someone searches for "coffee makers" they'll see yours at the top of their results page.<br> 
+You'll also want to include relevant keywords in any content on your site as well as links back to other pages within your website which contain more information about those products (and maybe even some sales pitches).<br>
+SEO is about making your content more relevant to the user, and it also means that you need good quality links from other websites which point towards yours too. This will help in improving the ranking of your site on Google, Bing, and other search engines like Yahoo!
+</p><br>
+<h3>What are the benefits of SEO?</h3>
+<p>SEO has a wide range of benefits to offer both new and already well-established businesses. Among its many advantages, some include an increase in website traffic, an increase in brand awareness, an increase in term revenues, and overall enhanced customer loyalty.<br>
+These benefits might also be indirect, such as increased brand authority and trust, which in turn results in higher conversion rates for your site’s users when they are looking for a product or service that you offer on your website (or ever visit again).<br>
+SEO may also help drive more sales by increasing customer satisfaction and retention rates through better customer service practices; this can also lead to improved user experience which helps attract new visitors who will then be able to convert them into loyal customers themselves!
+</p><br>
+<h3>Our Top Rated Sites for SEO Marketing   </h3>
+<p>Now there exist many sites that help in SEO marketing. Some of the most popular ones today are MOZ, SEMRUSH, Search Engine Land, Content Marketing Institute, Backlinko, and Ahrefs.<br>
+All of these sites require initial signup, after which you may or may not have to subscribe to premium to avail the full extent of each service. Some provide a maximum number of searches per day beyond which a premium would be required. <br>
+If you’re new to the idea of SEO you might be confused at first when you visit some of these sites. There are too many numbers to keep up with and too many business terms that would be completely unfamiliar to the layperson. <br>
+Since each site is different from the other we would advise that you watch a detailed tutorial as to how the site functions before you start using it. For instance, to master SEO use in MOZ, watch this YouTube video. 
+</p><br>
+<h3>There are many ways to do SEO on a web project </h3>
+<p>SEO is a long-term process that requires constant attention and effort to maintain. It's worth the effort because the return on investment (ROI) can be tremendous, but it does require patience and dedication.<br>
+There are many ways to do SEO on a web project. One way is to put keywords throughout your content so Google knows what you want them to find when people search for those terms in their queries or websites. <br>
+You can also use synonyms for these words if they're not already used elsewhere within your site's structure—but make sure not too many of these appear within one sentence!<br>
+Another way is to use anchor text links from other websites' pages on yours—this will help boost traffic from each page as well as increase trustworthiness among users who see themselves linked through other sources of authority like Wikipedia or Bing Images Search results when searching online!
+</p><br>
+<h3>Concluding Remarks </h3>
+<p>I hope this article has helped you understand some of the basics of what SEO is, how it works and what benefits it can offer you in your business. So hurry up and get a subscription to one of the platforms that we have included above in our top-rated site section. <br>
+As I mentioned before, Google is one of the most powerful search engines available today and if used correctly can help your website get noticed by potential customers or clients looking for something specific.<br>
+</p>
+`;
+
+
 export const postBodies = 
 [
     softwareDevelopment, 
@@ -724,5 +851,8 @@ export const postBodies =
     programmingLanguages,
     cuttingEdgeTechnologies,
     dynamicLinkingWebApps,
-    googleAdSenseEaring
+    googleAdSenseEaring,
+    Web3,
+    AIWorking,
+    SEOs
 ];

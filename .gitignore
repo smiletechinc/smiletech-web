@@ -4,10 +4,15 @@
 /node_modules
 /.pnp
 .pnp.js
-
+// "start": "react-scripts start",
+    // "build": "react-scripts build",
+    // "test": "react-scripts test",
 # testing
 /coverage
 
+/.vscode
+/.next
+/ghost
 # production
 /build
 

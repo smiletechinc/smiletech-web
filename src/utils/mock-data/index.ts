@@ -7,11 +7,13 @@ import { company } from './company';
 import { phoneNumber } from './phoneNumber';
 import { fullAddress, country } from './address';
 import { firstName, lastName, fullName } from './name';
-import { title, sentence, description } from './text';
+import { title, sentence, description, appBrief } from './text';
 import { price, rating, age, percent } from './number';
 import { socialFacebook, socialTwitter, socialInstagram, socialLinkedin } from './socialLink';
 // import { softwareDevelopment, growBuissness  } from './postBody';
 import { postBodies } from './postBody'
+import { appName } from './appsNames'
+import {tasbeeh, digitalQuran} from './images'
 // import { socialName } from './socialName';
 
 // ----------------------------------------------------------------------
@@ -36,8 +38,11 @@ const mockData = {
   text: {
     title: (index: number) => title[index],
     sentence: (index: number) => sentence[index],
-    description: (index: number) => description[index]
+    description: (index: number) => description[index],
+    appBrief: (index: number) => appBrief[index]
   },
+  tasbeeh: (index: number)=> tasbeeh[index],
+  digitalQuran: (index: number)=> digitalQuran[index],
   number: {
     percent: (index: number) => percent[index],
     rating: (index: number) => rating[index],
@@ -45,6 +50,7 @@ const mockData = {
     price: (index: number) => price[index]
   },
   postBody: (index: number) => postBodies[index],
+  appName: (index: number) => appName[index],
   image: {
     cover: (index: number) => `/static/mock-images/covers/cover_${index + 1}.jpg`,
     feed: (index: number) => `/static/mock-images/feeds/feed_${index + 1}.jpg`,

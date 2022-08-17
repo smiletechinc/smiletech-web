@@ -66,10 +66,12 @@ export type Post = {
   comment: number;
   share: number;
   favorite: number;
+  
   author: {
     name: string;
     avatarUrl: string;
   };
+  
   // tags: string[];
   body: string;
   favoritePerson: {
@@ -77,4 +79,26 @@ export type Post = {
     avatarUrl: string;
   }[];
   comments: PostComment[];
+};
+export type GhostPost = {
+  id: string;
+  feature_image: string;
+  title: string;
+  excerpt: string;
+  created_at: Date | string | number;
+  author: {
+    name: string;
+    avatarUrl: string;
+  };
+}
+
+export type GhostBlogState = {
+  isLoading: boolean;
+  error: boolean;
+  posts: GhostPost[];
+  post: GhostPost | null;
+  recentPosts: GhostPost[];
+  hasMore: boolean;
+  index: number;
+  step: number;
 };

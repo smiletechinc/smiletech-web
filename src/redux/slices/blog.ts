@@ -1,13 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { store } from '../store';
+
 // utils
 import axios from '../../utils/axios';
 // @types
 import { BlogState } from '../../@types/blog';
-
+import { GhostBlogState } from '../../@types/blog';
 // ----------------------------------------------------------------------
 
-const initialState: BlogState = {
+// const initialState: BlogState = {
+//   isLoading: false,
+//   error: false,
+//   posts: [],
+//   post: null,
+//   recentPosts: [],
+//   hasMore: true,
+//   index: 0,
+//   step: 11
+// };
+const initialState: GhostBlogState = {
   isLoading: false,
   error: false,
   posts: [],
@@ -18,7 +29,7 @@ const initialState: BlogState = {
   step: 11
 };
 
-const slice = createSlice({
+const slice = createSlice(  {
   name: 'blog',
   initialState,
   reducers: {
@@ -75,6 +86,24 @@ export default slice.reducer;
 export const { getMorePosts } = slice.actions;
 
 // ----------------------------------------------------------------------
+  // export const getStaticProps = async () => {
+  //   const { dispatch } = store;
+  //   dispatch(slice.actions.startLoading());
+  //   try{
+  //   const res = await fetch(
+  //     "https://abdul-rafay.ghost.io/ghost/api/content/posts/?key=b1ce5ad103d1cb2a8cd0a70212"
+  //   ).then((res) => res.json());
+    
+  //   dispatch(slice.actions.getPostsSuccess(res.data.posts));
+  //   } 
+  //   catch (error) {
+  //     dispatch(slice.actions.hasError(error));
+  //   }
+   
+  //   // setGhostData(ghostposts);
+  // };
+
+  // console.log(getStaticProps())
 
 export function getAllPosts() {
   return async () => {
@@ -114,15 +143,39 @@ export function getPostsInitial(index: number, step: number) {
 }
 
 // ----------------------------------------------------------------------
+const { BLOG_URL, CONTENT_API_KEY } = process.env;
+
+// export async function getPost(title: string) {
+//   const { dispatch } = store;
+//   dispatch(slice.actions.startLoading());
+//   try {
+//       const res = await fetch(
+//         `${BLOG_URL}/ghost/api/content/posts/title/${title}?key=${CONTENT_API_KEY}&fields=title,slug,created_at,updated_at,feature_image,html`
+//       ).then((res) => res.json());
+//       const posts = res.posts;
+//       console.log(posts);
+//       return posts[0];
+//       dispatch(slice.actions.getPostSuccess(res.data.post));
+//   }catch (error) {
+//       console.error(error);
+//       dispatch(slice.actions.hasError(true));
+//     }
+      
+//     };
 
 export function getPost(title: string) {
   return async () => {
     const { dispatch } = store;
     dispatch(slice.actions.startLoading());
     try {
-      const response = await axios.get('/api/blog/post', {
-        params: { title }
-      });
+      const response = await axios(
+        `${BLOG_URL}/ghost/api/content/posts/title/${title}?key=${CONTENT_API_KEY}&fields=title,slug,created_at,updated_at,feature_image,html`, {
+          params: {title}
+        }
+      );
+      // const response = await axios.get('/api/blog/post', {
+      //   params: { title }
+      // });
       dispatch(slice.actions.getPostSuccess(response.data.post));
     } catch (error) {
       console.error(error);

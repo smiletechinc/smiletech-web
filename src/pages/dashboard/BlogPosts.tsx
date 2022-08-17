@@ -15,11 +15,17 @@ import useSettings from "../../hooks/useSettings";
 import { PATH_DASHBOARD } from "../../routes/paths";
 // @types
 import { Post, BlogState } from "../../@types/blog";
+import { GhostPost, GhostBlogState } from "../../@types/blog";
 // components
 import Page from "../../components/Page";
 import HeaderBreadcrumbs from "../../components/HeaderBreadcrumbs";
 import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from "../../components/_dashboard/blog";
 
+//axios
+// import axios from "axios";
+
+//Ghost Api
+// import Ghost from "../ghost/newghostapi";
 // ----------------------------------------------------------------------
 
 const SORT_OPTIONS = [
@@ -30,7 +36,7 @@ const SORT_OPTIONS = [
 
 // ----------------------------------------------------------------------
 
-const applySort = (posts: Post[], sortBy: string) => {
+const applySort = (posts: GhostPost[], sortBy: string) => {
   if (sortBy === "latest") {
     return orderBy(posts, ["createdAt"], ["desc"]);
   }
@@ -57,15 +63,20 @@ const SkeletonLoad = (
   </Grid>
 );
 
-export default function BlogPosts() {
+export default function BlogPosts(props: any) {
+  // const [ghostdata, setGhostData] = useState([]);
   const { themeStretch } = useSettings();
   const dispatch = useDispatch();
   const [filters, setFilters] = useState("latest");
-  const { posts, hasMore, index, step } = useSelector((state: { blog: BlogState }) => state.blog);
-
+  const [data, setData] = useState([]);
+  const { posts, hasMore, index, step } = useSelector(
+    (state: { blog: GhostBlogState }) => state.blog
+  );
+  // console.log("postsGhost", posts);
+  // const { posts, hasMore, index, step } = useSelector((state: { blog: BlogState }) => state.blog);
   const sortedPosts = applySort(posts, filters);
   const onScroll = useCallback(() => dispatch(getMorePosts()), [dispatch]);
-
+  // const [ghostposts, setghostPosts] = useState("");
   useEffect(() => {
     dispatch(getPostsInitial(index, step));
   }, [dispatch, index, step]);
@@ -76,9 +87,38 @@ export default function BlogPosts() {
     }
   };
 
+  const getStaticProps = async () => {
+    const res = await fetch(
+      "https://abdul-rafay.ghost.io/ghost/api/content/posts/?key=b1ce5ad103d1cb2a8cd0a70212"
+    ).then((res) => res.json());
+
+    const ghostposts = await res.posts;
+    // setGhostData(ghostposts);
+    // console.log(ghostposts);
+    setData(ghostposts);
+
+    if (!ghostposts) {
+      return {
+        notFound: true
+      };
+    }
+
+    return {
+      props: { ghostposts }
+    };
+  };
+
+  useEffect(() => {
+    getStaticProps();
+  }, []);
+  //
   return (
     <Page title="Blog: Posts | Smile Tech">
       <Container maxWidth={themeStretch ? false : "lg"}>
+        {/* <h1>{ghostdata}</h1> */}
+        {/* {ghostposts.map((data: any) => {
+          console.log("data", data);
+        })} */}
         <HeaderBreadcrumbs
           heading="Blog"
           links={[
@@ -98,6 +138,14 @@ export default function BlogPosts() {
           }
         />
 
+        {/* <Button
+          onClick={() => {
+            getStaticProps();
+          }}
+        >
+          API
+        </Button> */}
+
         <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
           <BlogPostsSearch />
           <BlogPostsSort query={filters} options={SORT_OPTIONS} onSort={handleChangeSort} />
@@ -111,9 +159,8 @@ export default function BlogPosts() {
           style={{ overflow: "inherit" }}
         >
           <Grid container spacing={3}>
-            {sortedPosts.map((post, index) => (
-              <BlogPostCard key={post.id} post={post} index={index} />
-            ))}
+            {data.length > 0 &&
+              data.map((post, index) => <BlogPostCard key={index} post={post} index={index} />)}
           </Grid>
         </InfiniteScroll>
       </Container>
